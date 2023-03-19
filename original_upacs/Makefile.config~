@@ -1,0 +1,21 @@
+MAKE := make
+
+# FX100
+#F90 := /opt/FJSVmxlang/GM-2.0.0-03/bin/mpifrtpx
+#F90OPTFLAGS := -Kfast,XFILL,parallel,openmp,ocl,prefetch_sequential=soft,prefetch_stride,optmsg=2,noalias=s,mfunc=2,preex,autoobjstack,temparraystack -x-,dir=../inline
+#F90FLAGS := $(F90OPTFLAGS) -Cpp -Qt -DMPI -DFJT_PA -Ntl_trt -DGETTOD
+#F90LOPT := -Kopenmp,parallel
+
+# KNL
+#F90 := mpiifort
+#F90OPTFLAGS := -O3 -qopenmp -xMIC-AVX512 -qopt-streaming-stores=always
+#F90FLAGS := $(F90OPTFLAGS) -DMPI -cpp -qopt-report=5
+#F90LOPT := -qopenmp
+
+# SX-AT
+F90 := nfort
+F90OPTFLAGS := -fopenmp -O3 -proginf -report-all
+F90FLAGS := $(F90OPTFLAGS) -fpp 
+F90LOPT := -fopenmp -proginf -report-all -O3
+
+F90LINK := $(F90)

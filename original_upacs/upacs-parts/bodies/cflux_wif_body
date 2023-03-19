@@ -1,0 +1,46 @@
+      uuL = nv(1)*uL(<LA_IJK>)+nv(2)*vL(<LA_IJK>)+nv(3)*wL(<LA_IJK>) 								! *:3,+:2
+      hL  = GAMMA*GAMMA1I*preL(<LA_IJK>)/rhoL(<LA_IJK>)+0.5*uL(<LA_IJK>)*uL(<LA_IJK>)+vL(<LA_IJK>)*vL(<LA_IJK>)+wL(<LA_IJK>)*wL(<LA_IJK>)	! *:6,+3,/:1*13
+      !
+      uuR = nv(1)*uR(<LA_IJK>)+nv(2)*vR(<LA_IJK>)+nv(3)*wR(<LA_IJK>)								! *:3,+:2
+      hR  = GAMMA*GAMMA1I*preR(<LA_IJK>)/rhoR(<LA_IJK>)+0.5*uR(<LA_IJK>)*uR(<LA_IJK>)+vR(<LA_IJK>)*vR(<LA_IJK>)+wR(<LA_IJK>)*wR(<LA_IJK>)	! *:6,+:3,/:1*13
+      !
+      drho = rhoR(<LA_IJK>)-rhoL(<LA_IJK>)											! -:1
+      duu  = uuR-uuL													! -:1
+      dp   = preR(<LA_IJK>)-preL(<LA_IJK>)											! -:1
+      !
+      rho_bar = 0.5*(rhoL(<LA_IJK>)+rhoR(<LA_IJK>))										! *:1,+:1
+      uu_bar  = 0.5*(uuL+uuR)												! *:1,+:1
+      c_bari  = 1.0d0/sqrt(GAMMA*(preL(<LA_IJK>)+preR(<LA_IJK>))/(rhoL(<LA_IJK>)+rhoR(<LA_IJK>)))					! *:1,.+:2,/:2*13,sqrt:1*19
+      M_bar   = uu_bar*c_bari												! *:1
+      !
+      M_bar_p = abs(M_bar+1.d0)												! +:1,abs:1
+      M_bar_m = abs(M_bar-1.d0)												! -:1,abs:1
+      !
+      mass = 0.5d0*(rhoL(<LA_IJK>)*uuL + rhoR(<LA_IJK>)*uuR - abs(uu_bar)*drho &						! *:11,+:4,-:3,abs:2
+           + 0.5d0*(M_bar_p - M_bar_m)*rho_bar*duu &
+           + 0.5d0*(M_bar_p + M_bar_m - 2.d0*abs(M_bar))*dp*c_bari)
+      mass_abs = abs(mass)												! abs:1
+      !
+      M_p = uuL*c_bari													! *:1
+      M_p_abs = abs(M_p)												! abs:1
+      M_m = uuR*c_bari													! *:1
+      M_m_abs = abs(M_m)												! abs:1
+      !
+      if( M_p_abs <= 1.d0 ) then
+        beta_p = 0.25d0*(2.d0-M_p)*(M_p+1.d0)*(M_p+1.d0)								! *:3,+:2,-:1
+      else
+        beta_p = 0.5d0*(M_p+M_p_abs)/(M_p+1.d-23)									! *:1,+:2,/:1*13
+      endif
+      if( M_m_abs <= 1.d0 ) then
+        beta_m = 0.25d0*(2.d0+M_m)*(M_m-1.d0)*(M_m-1.d0)								! *:3,+:2,-:1
+      else
+        beta_m = 0.5d0*(M_m-M_m_abs)/(M_m+1.d-23)									! *:1,+:1,-:1,/:1*13
+      endif
+      !
+      p = beta_p*preL(<LA_IJK>) + beta_m*preR(<LA_IJK>)									! *:2,+:1
+      !
+      fmass(<LA_IJK>) = area*mass											! *:24,+:7,-:8
+      fmomx(<LA_IJK>) = area*(0.5d0*mass*(uL(<LA_IJK>)+uR(<LA_IJK>))-0.5d0*mass_abs*(uR(<LA_IJK>)-uL(<LA_IJK>))+p*nv(1))
+      fmomy(<LA_IJK>) = area*(0.5d0*mass*(vL(<LA_IJK>)+vR(<LA_IJK>))-0.5d0*mass_abs*(vR(<LA_IJK>)-vL(<LA_IJK>))+p*nv(2))
+      fmomz(<LA_IJK>) = area*(0.5d0*mass*(wL(<LA_IJK>)+wR(<LA_IJK>))-0.5d0*mass_abs*(wR(<LA_IJK>)-wL(<LA_IJK>))+p*nv(3))
+      fene (<LA_IJK>) = area*(0.5d0*mass*(hL   +hR   )-0.5d0*mass_abs*(hR-hL))

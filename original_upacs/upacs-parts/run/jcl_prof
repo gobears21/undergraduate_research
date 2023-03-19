@@ -1,0 +1,37 @@
+#!/bin/sh
+
+#JX --bizcode CMP06
+#JX --usecode GE
+#JX -L "rscunit=MA"
+#JX -L "node=1:mesh"
+#JX -L "node-mem=29184Mi"
+#JX -L "elapse=05:00:00"
+#JX --mpi proc=2
+#JX -N prof
+#JX -S
+
+
+export LD_LIBRARY_PATH=/opt/FJSVmxlang/lib64
+#export LPG="/opt/FJSVxosmmm/sbin/lpgparm -p 4MB -d 4MB -h 4MB -s 4MB -t 4MB -l demand"
+export XOS_MMM_L_ARENA_FREE=2
+export FLIB_FASTOMP=TRUE
+
+export LD="alc"
+
+export sz1=80
+export sz2=180
+tgp=$(($sz2*$sz2*$sz2))
+
+export PARALLEL=16
+export OMP_NUM_THREADS=${PARALLEL}
+
+for d in rhs
+do
+	export PROF_DIR="../prof/"${d}
+	mkdir ${PROF_DIR}
+	rm -rf ${PROF_DIR}/*
+	for n in {1..11}
+	do
+		fapp -C -d ${PROF_DIR}/pa$n -Hpa=$n mpiexec -n $mpip -of ${PROF_DIR}/${d}.log.$n ../${d}/${LD} ${tgp} ${sz1} ${sz1}
+	done
+done

@@ -1,0 +1,957 @@
+for p in upacs-parts ; do (cd $p; make) ; done
+make[1]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts'
+cd bodies; ./mksrc
+for p in cflux cflux-1d vflux vflux-1d muscl muscl-1d muscl-1d cfacev cfacev-1d cfacev-1d muscl-1d_omp cfacev-1d_omp cflux_wif cflux_wif-1d ; do (cd $p; if [ ! -f ./Makefile ]; then ln -s ../Makefile_subdir+ ./Makefile ; fi ; make) ; done
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Warning: alc.f90, line 62: Unused dummy variable OVLP
+[NEC Fortran Compiler normal termination, 1 warning]
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 37: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 40: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 43: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 44: Parallel routine generated.: KERNELMODULE::CFLUX$1
+nfort: par(1803): alc.f90, line 51: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 51: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 51: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 53: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 37: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 41: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 43: Parallel routine generated.: KERNELMODULE::CFLUX$1
+nfort: par(1803): alc.f90, line 50: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 50: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Warning: alc.f90, line 66: Unused dummy variable OVLP
+[NEC Fortran Compiler normal termination, 1 warning]
+nfort: opt(1418): alc.f90, line 42: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 43: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 44: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 46: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 49: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 51: Parallel routine generated.: KERNELMODULE::VFLUX$1
+nfort: par(1803): alc.f90, line 55: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 55: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 55: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 57: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 42: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 43: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 44: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 47: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 49: Parallel routine generated.: KERNELMODULE::VFLUX$1
+nfort: par(1803): alc.f90, line 51: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 51: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/vflux-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Warning: alc.f90, line 74: Unused dummy variable OVLP
+[NEC Fortran Compiler normal termination, 1 warning]
+nfort: opt(1418): alc.f90, line 37: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 39: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 41: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 44: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 51: Parallel routine generated.: KERNELMODULE::MUSCL$1
+nfort: par(1803): alc.f90, line 56: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 56: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 56: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 58: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 17: Constant-length loop is expanded.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 40: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 50: Parallel routine generated.: KERNELMODULE::MUSCL$1
+nfort: par(1803): alc.f90, line 55: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 55: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make[3]: `alc' is up to date.
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 101: Variable IETA set but never referenced
+Questionable: alc.f90, line 101: Variable IXI set but never referenced
+Questionable: alc.f90, line 101: Variable IZET set but never referenced
+Warning: alc.f90, line 101: Unused dummy variable OVLP
+[NEC Fortran Compiler normal termination, 4 warnings]
+nfort: opt(1418): alc.f90, line 46: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 49: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 52: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 56: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 61: Parallel routine generated.: KERNELMODULE::CFACEV$1
+nfort: par(1803): alc.f90, line 66: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 66: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 66: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 68: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 134: Variable IETA set but never referenced
+Questionable: alc.f90, line 134: Variable IXI set but never referenced
+Questionable: alc.f90, line 134: Variable IZET set but never referenced
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: opt(1418): alc.f90, line 45: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 48: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 51: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 59: Parallel routine generated.: KERNELMODULE::CFACEV$1
+nfort: par(1803): alc.f90, line 64: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 64: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make[3]: `alc' is up to date.
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d_omp'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d_omp'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 40: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 50: Parallel routine generated.: KERNELMODULE::MUSCL$1
+nfort: par(1803): alc.f90, line 55: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 55: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d_omp'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/muscl-1d_omp'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d_omp'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d_omp'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 95: Variable IETA set but never referenced
+Questionable: alc.f90, line 95: Variable IXI set but never referenced
+Questionable: alc.f90, line 95: Variable IZET set but never referenced
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: opt(1418): alc.f90, line 45: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 48: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 51: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 59: Parallel routine generated.: KERNELMODULE::CFACEV$1
+nfort: par(1803): alc.f90, line 64: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 64: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d_omp'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cfacev-1d_omp'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Warning: alc.f90, line 62: Unused dummy variable OVLP
+Warning: alc.f90, line 62: Unused local variable SWITCH
+[NEC Fortran Compiler normal termination, 2 warnings]
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 37: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 40: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 43: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 44: Parallel routine generated.: KERNELMODULE::CFLUX$1
+nfort: par(1803): alc.f90, line 51: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 51: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 51: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 53: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Warning: alc.f90, line 57: Unused local variable SWITCH
+[NEC Fortran Compiler normal termination, 1 warning]
+nfort: opt(1418): alc.f90, line 36: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 37: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 38: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 41: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 43: Parallel routine generated.: KERNELMODULE::CFLUX$1
+nfort: par(1803): alc.f90, line 50: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 50: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/cflux_wif-1d'
+for p in rhsc rhsc-1d rhsc-1d_omp rhsv rhsv-1d rhsv-1d_omp rhs rhs-1d rhs-1d_omp  ; do (cd $p; if [ ! -f ./Makefile ]; then ln -s ../Makefile_subdir+ ./Makefile ; fi ; make) ; done
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 45: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 46: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 47: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 49: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 52: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 78: Parallel routine generated.: KERNELMODULE::RHSC$1
+nfort: par(1803): alc.f90, line 85: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 85: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 85: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 89: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 105: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 105: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 105: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 109: Vectorized loop.
+nfort: par(1803): alc.f90, line 119: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 119: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 119: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 121: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 45: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 46: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 47: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 51: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 57: Parallel routine generated.: KERNELMODULE::RHSC$1
+nfort: par(1803): alc.f90, line 65: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 65: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 77: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 77: Vectorized loop.
+nfort: par(1803): alc.f90, line 87: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 87: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d_omp'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d_omp'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+nfort: opt(1418): alc.f90, line 45: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 46: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 47: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 51: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 57: Parallel routine generated.: KERNELMODULE::RHSC$1
+nfort: par(1803): alc.f90, line 65: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 65: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 77: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 77: Vectorized loop.
+nfort: par(1803): alc.f90, line 87: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 87: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d_omp'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsc-1d_omp'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 175: Variable IETA set but never referenced
+Questionable: alc.f90, line 175: Variable IXI set but never referenced
+Questionable: alc.f90, line 175: Variable IZET set but never referenced
+Warning: alc.f90, line 176: Local variable KAPPA_1M is initialized but never used
+Warning: alc.f90, line 176: Local variable KAPPA_1P is initialized but never used
+[NEC Fortran Compiler normal termination, 5 warnings]
+nfort: opt(1418): alc.f90, line 56: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 59: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 62: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 66: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 69: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 99: Parallel routine generated.: KERNELMODULE::RHSV$1
+nfort: par(1803): alc.f90, line 104: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 104: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 104: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 108: Vectorized loop.
+nfort: par(1803): alc.f90, line 141: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 141: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 141: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 145: Vectorized loop.
+nfort: par(1803): alc.f90, line 155: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 155: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 155: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 157: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 133: Variable IETA set but never referenced
+Questionable: alc.f90, line 133: Variable IXI set but never referenced
+Questionable: alc.f90, line 133: Variable IZET set but never referenced
+Warning: alc.f90, line 134: Local variable KAPPA_1M is initialized but never used
+Warning: alc.f90, line 134: Local variable KAPPA_1P is initialized but never used
+[NEC Fortran Compiler normal termination, 5 warnings]
+nfort: opt(1418): alc.f90, line 55: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 58: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 61: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 67: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 71: Parallel routine generated.: KERNELMODULE::RHSV$1
+nfort: par(1803): alc.f90, line 78: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 78: Vectorized loop.
+nfort: par(1803): alc.f90, line 112: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 112: Vectorized loop.
+nfort: par(1803): alc.f90, line 122: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 122: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d_omp'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d_omp'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 132: Variable IETA set but never referenced
+Questionable: alc.f90, line 132: Variable IXI set but never referenced
+Questionable: alc.f90, line 132: Variable IZET set but never referenced
+Warning: alc.f90, line 133: Local variable KAPPA_1M is initialized but never used
+Warning: alc.f90, line 133: Local variable KAPPA_1P is initialized but never used
+[NEC Fortran Compiler normal termination, 5 warnings]
+nfort: opt(1418): alc.f90, line 55: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 58: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 61: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 67: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 71: Parallel routine generated.: KERNELMODULE::RHSV$1
+nfort: par(1803): alc.f90, line 77: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 77: Vectorized loop.
+nfort: par(1803): alc.f90, line 111: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 111: Vectorized loop.
+nfort: par(1803): alc.f90, line 121: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 121: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d_omp'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhsv-1d_omp'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 256: Variable IETA set but never referenced
+Questionable: alc.f90, line 256: Variable IXI set but never referenced
+Questionable: alc.f90, line 256: Variable IZET set but never referenced
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: opt(1418): alc.f90, line 64: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 67: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 70: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 74: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 77: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 123: Parallel routine generated.: KERNELMODULE::RHS$1
+nfort: par(1803): alc.f90, line 132: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 132: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 132: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 136: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_3d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 152: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 152: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 152: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 156: Vectorized loop.
+nfort: par(1803): alc.f90, line 166: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 166: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 166: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 168: Vectorized loop.
+nfort: par(1803): alc.f90, line 182: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 182: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 182: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 186: Vectorized loop.
+nfort: par(1803): alc.f90, line 219: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 219: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 219: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 223: Vectorized loop.
+nfort: par(1803): alc.f90, line 233: Parallelized by "do".
+nfort: opt(2495): alc.f90, line 233: Loop nest collapsed by "collapse" clause.
+nfort: vec( 102): alc.f90, line 233: Partially vectorized loop.
+nfort: vec( 101): alc.f90, line 235: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 170: Variable IETA set but never referenced
+Questionable: alc.f90, line 170: Variable IXI set but never referenced
+Questionable: alc.f90, line 170: Variable IZET set but never referenced
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: opt(1418): alc.f90, line 64: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 67: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 70: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 76: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 82: Parallel routine generated.: KERNELMODULE::RHS$1
+nfort: par(1803): alc.f90, line 92: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 92: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 104: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 104: Vectorized loop.
+nfort: par(1803): alc.f90, line 113: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 113: Vectorized loop.
+nfort: par(1803): alc.f90, line 124: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 124: Vectorized loop.
+nfort: par(1803): alc.f90, line 153: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 153: Vectorized loop.
+nfort: par(1803): alc.f90, line 161: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 161: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d'
+make[2]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d_omp'
+make alc
+make[3]: Entering directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d_omp'
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c alc.f90
+Questionable: alc.f90, line 175: Variable IETA set but never referenced
+Questionable: alc.f90, line 175: Variable IXI set but never referenced
+Questionable: alc.f90, line 175: Variable IZET set but never referenced
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: opt(1418): alc.f90, line 64: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 67: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 70: Constant-length loop is expanded.
+nfort: opt(1418): alc.f90, line 76: Constant-length loop is expanded.
+nfort: par(1801): alc.f90, line 82: Parallel routine generated.: KERNELMODULE::RHS$1
+nfort: par(1803): alc.f90, line 92: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 92: Vectorized loop.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 16: Constant-length loop is expanded.
+nfort: opt(1418): ./../bodies/muscl_body_1d.inc, line 17: Constant-length loop is expanded.
+nfort: par(1803): alc.f90, line 104: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 104: Vectorized loop.
+nfort: par(1803): alc.f90, line 114: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 114: Vectorized loop.
+nfort: par(1803): alc.f90, line 125: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 125: Vectorized loop.
+nfort: par(1803): alc.f90, line 156: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 156: Vectorized loop.
+nfort: par(1803): alc.f90, line 166: Parallelized by "do".
+nfort: vec( 101): alc.f90, line 166: Vectorized loop.
+nfort -fopenmp -O3 -proginf -fpp -I../ -I./ -c ../main+.f90
+Warning: ../main+.f90, line 146: Unused local variable MAXTIME
+Warning: ../main+.f90, line 146: Unused local variable MINTIME
+Warning: ../main+.f90, line 146: Unused local variable T_GETTOD
+[NEC Fortran Compiler normal termination, 3 warnings]
+nfort: vec( 101): ../main+.f90, line 34: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 35: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 41: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 42: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 46: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 47: Unvectorized loop.
+nfort: vec( 101): ../main+.f90, line 51: Vectorized loop.
+nfort: vec( 101): ../main+.f90, line 52: Vectorized loop.
+nfort: vec( 103): ../main+.f90, line 53: Unvectorized loop.
+nfort: par(1801): ../main+.f90, line 70: Parallel routine generated.: MAIN_$1
+nfort: par(1805): ../main+.f90, line 71: Master-construct generated.
+nfort: vec( 103): ../main+.f90, line 94: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 125: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 128: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 130: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 133: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 136: Unvectorized loop.
+nfort: vec( 103): ../main+.f90, line 139: Unvectorized loop.
+nfort -fopenmp -proginf -o alc alc.o main+.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+make[3]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d_omp'
+make[2]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts/rhs-1d_omp'
+make[1]: Leaving directory `/import/gp-home.ciero/ebata/upacs-parts/original_upacs/upacs-parts'

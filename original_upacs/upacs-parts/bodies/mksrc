@@ -1,0 +1,44 @@
+#!/bin/bash
+
+for f in cflux vflux cflux_wif cflux_fission
+do
+	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j,k/g' >& ${f}_body_3d.inc
+	cat ./${f}_body | sed 's/<IJK>/l/g' | sed 's/<LA_IJK>/l/g' >& ${f}_body_1d.inc
+
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i/g' >& ${f}_body_3dmi.inc
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j/g' >& ${f}_body_3dmij.inc
+done
+
+for f in muscl dq
+do
+	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j,k/g' | sed 's/<LA_IJKM>/im,jm,km/g' \
+	                | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' >& ${f}_body_3d.inc
+	cat ./${f}_body | sed 's/<IJK>/l/g' |  sed 's/<LA_IJK>/l/g' | sed 's/<LA_IJKM>/lm/g' \
+			| sed 's/<IJKM>/lm/g' | sed 's/<IJKP>/lp/g' >& ${f}_body_1d.inc
+
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i/g' | sed 's/<LA_IJKM>/im/g' \
+#	                | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' >& ${f}_body_3dmi.inc
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j/g' | sed 's/<LA_IJKM>/im,jm/g' \
+#	                | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' >& ${f}_body_3dmij.inc
+done
+
+for f in cfacev cfacev_xi cfacev_eta cfacev_zeta
+do
+	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j,k/g' \
+		        | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' \
+	                | sed 's/<IJKA>/ia,ja,ka/g' | sed 's/<IJKB>/ib,jb,kb/g' \
+			| sed 's/<IJKC>/ic,jc,kc/g' | sed 's/<IJKD>/id,jd,kd/g'	>& ${f}_body_3d.inc
+	cat ./${f}_body | sed 's/<IJK>/l/g' |  sed 's/<LA_IJK>/l/g' \
+		        | sed 's/<IJKM>/lm/g' | sed 's/<IJKP>/lp/g' \
+	                | sed 's/<IJKA>/la/g' | sed 's/<IJKB>/lb/g' \
+			| sed 's/<IJKC>/lc/g' | sed 's/<IJKD>/ld/g'	>& ${f}_body_1d.inc
+
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i/g' \
+#		        | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' \
+#	                | sed 's/<IJKA>/ia,ja,ka/g' | sed 's/<IJKB>/ib,jb,kb/g' \
+#			| sed 's/<IJKC>/ic,jc,kc/g' | sed 's/<IJKD>/id,jd,kd/g'	>& ${f}_body_3dmi.inc
+#	cat ./${f}_body | sed 's/<IJK>/i,j,k/g' | sed 's/<LA_IJK>/i,j/g' \
+#		        | sed 's/<IJKM>/im,jm,km/g' | sed 's/<IJKP>/ip,jp,kp/g' \
+#	                | sed 's/<IJKA>/ia,ja,ka/g' | sed 's/<IJKB>/ib,jb,kb/g' \
+#			| sed 's/<IJKC>/ic,jc,kc/g' | sed 's/<IJKD>/id,jd,kd/g'	>& ${f}_body_3dmij.inc
+done

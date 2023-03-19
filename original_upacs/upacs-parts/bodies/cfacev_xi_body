@@ -1,0 +1,9 @@
+      !
+      ! xi derivatives
+      !
+      ! *:5, /:2, -:3
+      dudxi = (u(<IJKP>)-u(<IJK>))*dxi
+      dvdxi = (v(<IJKP>)-v(<IJK>))*dxi
+      dwdxi = (w(<IJKP>)-w(<IJK>))*dxi
+      dTdxi = GAMMA*(pre(<IJKP>)/rho(<IJKP>)-pre(<IJK>)/rho(<IJK>))*dxi
+      !

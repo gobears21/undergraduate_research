@@ -1,0 +1,16 @@
+#!/bin/sh
+
+for d in muscl cflux cfacev vflux rhsc rhsv rhs
+do
+	../../logproc.rb ../logs/$d
+	../../logproc.rb ../logs/${d}-1d
+done
+
+for d in muscl cfacev rhsc rhsv rhs
+do
+	../../logproc.rb ../logs/${d}-1d_omp
+done
+
+#../../logproc.rb ../logs/rhs-1d_omp_marge
+
+gnuplot plot.gp

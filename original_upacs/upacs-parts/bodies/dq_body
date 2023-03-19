@@ -1,0 +1,5 @@
+          dmas(<IJK>) = dmas(<IJK>) + voli*(fmass(<LA_IJK>)-fmass(<LA_IJKM>)) 		! +:5,-:5,*:5
+          dmox(<IJK>) = dmox(<IJK>) + voli*(fmomx(<LA_IJK>)-fmomx(<LA_IJKM>))
+          dmoy(<IJK>) = dmoy(<IJK>) + voli*(fmomy(<LA_IJK>)-fmomy(<LA_IJKM>))
+          dmoz(<IJK>) = dmoz(<IJK>) + voli*(fmomz(<LA_IJK>)-fmomz(<LA_IJKM>))
+          dene(<IJK>) = dene(<IJK>) + voli*(fene (<LA_IJK>)-fene (<LA_IJKM>))

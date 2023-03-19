@@ -1,0 +1,19 @@
+preprint by August 6
+
+presentation on August 19
+
+deadline of the final thesis (30+ pages) is Sep 3
+
+https://i.riken.jp/en/supercom/documents/himenobmt/
+
+himenobmt kokkos
+
+
+滝沢寛之6:25 PM
+https://www.hpc.is.tohoku.ac.jp/wp-content/uploads/2020/06/c64fd79cbc355bcaa3afbfbeb9e7bc82.jpg
+滝沢寛之7:16 PM
+inline double get_time()
+滝沢寛之7:51 PM
+https://i.riken.jp/en/supercom/documents/himenobmt/
+滝沢寛之7:53 PM
+https://github.com/Tohoku-University-Takizawa-Lab/Kokkos_for_VE/tree/master/benchmarks/himeno_benchmark

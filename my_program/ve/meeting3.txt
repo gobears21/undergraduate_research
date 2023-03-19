@@ -1,0 +1,22 @@
+ＪＩＡＨＡＯ ＬＩ2:39 PM
+https://airportal.cn/513111/pSUMRIA0pA (Copy the link into your browser to open)
+https://airportal.cn/975536/wY6sAeZYhK (Copy the link into your browser to open)
+ＪＩＡＨＡＯ ＬＩ2:41 PM
+https://airportal.cn/933165/Kg8W7ZgyVk (Copy the link into your browser to open)
+ＪＩＡＨＡＯ ＬＩ3:00 PM
+https://airportal.cn/577207/nKpCYdhwAh (Copy the link into your browser to open)
+
+// 找名字
+
+加上 kernal register (名字)
+
+在neosycl 
+
+SIMD 指令
+
+
+
+/home/gobears21/neoSYCL/include/CL/SYCL/nec/
+ve_hernel.hpp  line 33, 119
+
+/home/gobears21/my_program/neoSYCL/include/CL/SYCL/nec/

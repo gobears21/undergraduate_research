@@ -1,0 +1,48 @@
+      select case(dir)
+      case(1)
+        dudx(<LA_IJK>) = dudxi
+        dvdx(<LA_IJK>) = dvdxi
+        dwdx(<LA_IJK>) = dwdxi
+        dTdx(<LA_IJK>) = dTdxi
+        dudy(<LA_IJK>) = dudeta
+        dvdy(<LA_IJK>) = dvdeta
+        dwdy(<LA_IJK>) = dwdeta
+        dTdy(<LA_IJK>) = dTdeta
+        dudz(<LA_IJK>) = dudzet
+        dvdz(<LA_IJK>) = dvdzet
+        dwdz(<LA_IJK>) = dwdzet
+        dTdz(<LA_IJK>) = dTdzet
+      case(2)
+        dudx(<LA_IJK>) = dudzet
+        dvdx(<LA_IJK>) = dvdzet
+        dwdx(<LA_IJK>) = dwdzet
+        dTdx(<LA_IJK>) = dTdzet
+        dudy(<LA_IJK>) = dudxi
+        dvdy(<LA_IJK>) = dvdxi
+        dwdy(<LA_IJK>) = dwdxi
+        dTdy(<LA_IJK>) = dTdxi
+        dudz(<LA_IJK>) = dudeta
+        dvdz(<LA_IJK>) = dvdeta
+        dwdz(<LA_IJK>) = dwdeta
+        dTdz(<LA_IJK>) = dTdeta
+      case(3)
+        dudx(<LA_IJK>) = dudeta
+        dvdx(<LA_IJK>) = dvdeta
+        dwdx(<LA_IJK>) = dwdeta
+        dTdx(<LA_IJK>) = dTdeta
+        dudy(<LA_IJK>) = dudzet
+        dvdy(<LA_IJK>) = dvdzet
+        dwdy(<LA_IJK>) = dwdzet
+        dTdy(<LA_IJK>) = dTdzet
+        dudz(<LA_IJK>) = dudxi
+        dvdz(<LA_IJK>) = dvdxi
+        dwdz(<LA_IJK>) = dwdxi
+        dTdz(<LA_IJK>) = dTdxi
+      end select
+      !
+      ! *:4, +:4
+      fu(<LA_IJK>) = (u(<IJKP>)+u(<IJK>))*0.5
+      fv(<LA_IJK>) = (v(<IJKP>)+v(<IJK>))*0.5
+      fw(<LA_IJK>) = (w(<IJKP>)+w(<IJK>))*0.5
+      mu(<LA_IJK>) = (vis(<IJKP>)+vis(<IJK>))*0.5
+      !

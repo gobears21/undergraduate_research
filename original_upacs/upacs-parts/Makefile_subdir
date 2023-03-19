@@ -1,0 +1,23 @@
+include ../../Makefile.config
+
+TARGET = alc
+
+default:
+	$(MAKE) $(TARGET)
+
+alc.o: alc.f90
+	$(F90) $(F90FLAGS) -I../ -I./ -c alc.f90
+main.o: ../main.f90 alc.o kernel_if.inc
+	$(F90) $(F90FLAGS) -I../ -I./ -c ../main.f90
+
+$(TARGET): alc.o main.o
+	$(F90LINK) $(F90LOPT) -o alc alc.o main.o ../dataTypeModule.o ../upmpi.o ../loopModule.o
+
+clean:
+	rm -rf alc *.o *.mod *.lst *.optrpt
+
+distclean:
+	$(MAKE) clean
+	rm -rf Makefile
+
+.SUFFIXES:

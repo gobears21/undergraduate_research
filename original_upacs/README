@@ -1,0 +1,23 @@
+1. Edit "Makefile.config" in this directory.
+ - Two examples for FX100(Fujitsu) and KNL(Intel) are descried in Makefiles
+ - F90, F90OPTFLAGS, F90FLAGS and F90LOPT should be changed according to your system.
+
+2. Run make here.
+
+3. Move to "work" in each directory (mytriad, mbtriad, mbtriad3d mbtriad1d_mw and upacs-parts), edit "run", "jcl" or "jcl.sh" according to your system.
+
+4. Run "run" or "jcl.sh", or submit "jcl" on your system, output files are written in "logs" directory.
+
+5. tools/post processes log files and creates plots by using gnuplot
+
+mytriad : STREAM TRIAD (MPI version)
+mbtriad : Multi-block version of STREAM TRIAD
+mbtriad3d : 3D array version of mbtriad 
+ - 3dto1d : 3D arraies are regarded as 1D arraies in a kernel routine.
+mbtriad1d_mw : multipule write of mbtriad1d
+ - m{ijk} : read:2, write:2 + stencil
+ - st{ijk} : mbtriad1d-stencil (write:2)
+upacs-parts :  main routines of UPACS-Lite (and UPACS)
+ - UPACS-Lite is a subset of a real application UPACS
+ - cflux and vflux : a stream type program
+ - muscl and cfacev : a stencil type program

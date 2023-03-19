@@ -1,0 +1,1 @@
+A memory bank conflict prevention mechanism for the SYCL programming model

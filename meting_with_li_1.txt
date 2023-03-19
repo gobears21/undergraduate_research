@@ -1,0 +1,48 @@
+https://www.hpc.nec/documentation
+https://www.hpc.nec/documents/veos/en/veoffload/md_GettingStarted.html
+
+
+£Ê£É£Á£È£Á£Ï £Ì£É4:57 PM
+https://github.com/Tohoku-University-Takizawa-Lab/neoSYCL
+£Ê£É£Á£È£Á£Ï £Ì£É5:07 PM
+git fetch origin
+£Ê£É£Á£È£Á£Ï £Ì£É5:10 PM
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+£Ê£É£Á£È£Á£Ï £Ì£É5:14 PM
+ssh-keygen
+£Ê£É£Á£È£Á£Ï £Ì£É5:19 PM
+git fetch origin
+£Ê£É£Á£È£Á£Ï £Ì£É5:22 PM
+git branch -a
+git checkout -b ljh origin/oldversion
+£Ê£É£Á£È£Á£Ï £Ì£É5:33 PM
+https://www.hpc.nec/documentation
+https://www.hpc.nec/documents/veos/en/veoffload/md_GettingStarted.html
+£Ê£É£Á£È£Á£Ï £Ì£É5:43 PM
+mkdir build
+£Ê£É£Á£È£Á£Ï £Ì£É5:46 PM
+#!/bin/bash
+
+# set environment variable for neoSYCL-bench
+
+GCC_HOME=/opt/gcc-8.2.0
+PATH=$GCC_HOME/bin:$PATH
+LD_LIBRARY_PATH=$GCC_HOME/lib:$GCC_HOME/lib64:$LD_LIBRARY_PATH
+
+export PATH LD_LIBRARY_PATH
+
+export CC=gcc
+export CXX=g++
+£Ê£É£Á£È£Á£Ï £Ì£É5:50 PM
+git pull
+cmake -D BUILD_VE=ON ..
+£Ê£É£Á£È£Á£Ï £Ì£É5:52 PM
+/opt/cmake-3.9/bin/cmake -D BUILD_VE=ON ..
+
+£Ê£É£Á£È£Á£Ï £Ì£É6:05 PM
+https://www.hpc.nec/documents/veos/en/veoffload/md_GettingStarted.html
+
+
+£Ê£É£Á£È£Á£Ï £Ì£É6:13 PM
+https://www.hpc.nec/documentation

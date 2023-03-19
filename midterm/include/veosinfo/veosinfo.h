@@ -1,0 +1,795 @@
+/**
+ * Copyright (C) 2020 NEC Corporation
+ * This file is part of the VEOS information library.
+ *
+ * The VEOS information library is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General Public
+ * License as published by the Free Software Foundation; either version
+ * 2.1 of the License, or (at your option) any later version.
+ *
+ * The VEOS information library is distributed in the hope that it will be
+ * useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+ * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with the VEOS information library; if not, see
+ * <http://www.gnu.org/licenses/>.
+ */
+/**
+ * @file veosinfo.h
+ * @brief Header file for veosinfo.c file
+ *
+ * @internal
+ * @author RPM command
+ */
+#ifndef _VEOSINFO_H
+#define _VEOSINFO_H
+#include <string.h>
+#include <sched.h>
+#include <sys/time.h>
+#include <sys/resource.h>
+#include <stdbool.h>
+#include <sys/types.h>
+#include <stdint.h>
+#include <sys/shm.h>
+#include <limits.h>
+#include <sys/mman.h>
+
+#define VE_EINVAL_COREID	-514	/*!< Error number for invalid cores */
+#define VE_EINVAL_NUMAID	-515	/*!< Error number for invalid NUMA node */
+#define VE_EINVAL_LIMITOPT	-516	/*!< Error number for invalid VE_LIMIT_OPT */
+#define VE_ERANGE_LIMITOPT	-517	/*!< Error number if limit is out of range */
+#define VEO_PROCESS_EXIST	515	/*!< Identifier for VEO API PID */
+#define VE_VALID_THREAD		516	/*!< Identifier for process/thread */
+#define VE_MAX_NODE	8		/*!< Maximum number of VE nodes */
+#define VE_PATH_MAX	4096		/*!< Maximum possible path length */
+#define VE_FILE_NAME	255		/*!< Maximum length of file name */
+#define FILENAME	15              /*!< Length of file used to get
+					 * pmap/ipcs/ipcrm command's information
+					 */
+#define VE_BUF_LEN	255
+#define VE_MAX_CORE_PER_NODE 16
+#define VMFLAGS_LENGTH	81
+#define VE_MAX_CACHE	4		/*!< Maximum number of VE cache */
+#define VE_DATA_LEN     20
+#define VE_MAX_REGVALS  64		/*!< Max nr of transfered registers */
+#define MAX_DEVICE_LEN  255
+#define MAX_POWER_DEV   20
+#define VE_PAGE_SIZE	2097152
+#define VKB		1024
+#define EXECVE_MAX_ARGS	256
+#define VE_EXEC_PATH	"/opt/nec/ve/bin/ve_exec"
+#define VE_NODE_SPECIFIER	"-N"
+#define MICROSEC_TO_SEC		1000000
+#define VE_NUMA_NUM	2		/* Maximum NUMA nodes in each VE node */
+#define MAX_CORE_IN_HEX	4		/* Maximum core value in HEX */
+#define MAX_SWAP_PROCESS 256
+#define NS_DIV 2
+
+#ifdef __cplusplus  
+extern "C" {  
+#endif  
+
+/**
+ * @brief Structure to get VE architecture information
+ */
+struct ve_archinfo {
+	char machine[VE_FILE_NAME];	/*!<
+					 * Machine name as per VE
+					 * architecture
+					 */
+	char processor[257];		/*!<
+					 * Processor name as per VE
+					 * architecture
+					 */
+	char hw_platform[257];		/*!<
+					 * Hardware Platform as per VE
+					 * architecture
+					 */
+};
+
+/**
+ * @brief Structure to get information about all VE nodes
+ */
+struct ve_nodeinfo {
+	int nodeid[VE_MAX_NODE];	/*!< To store VE NodeIDs */
+	int status[VE_MAX_NODE];	/*!< Status of each NodeID */
+	int cores[VE_MAX_NODE];		/*!< Cores for each node */
+	int total_node_count;		/*!< Total number of VE nodes available */
+};
+
+/**
+ * @brief RPM source specific structure to get the load average information
+ * from VEOS
+ */
+struct ve_loadavg {
+	double av_1;	/*!< Load average of last 1 minute */
+	double av_5;	/*!< Load average of last 5 minute */
+	double av_15;	/*!< Load average of last 15 minute */
+	int runnable;	/*!< Number of runnable thread and process on VE */
+	int total_proc;	/*!< Number of total thread and process on VE */
+};
+
+/**
+ * @brief RPM source specific structure to get the memory data of VE node
+ */
+struct ve_meminfo {
+	unsigned long kb_main_total;	/*!< Total usable RAM */
+	unsigned long kb_main_used;	/*!<
+					 * Total used RAM
+					 * (kb_main_total - kb_main_free)
+					 */
+	unsigned long kb_main_free;	/*!< Total free memory */
+	unsigned long kb_main_shared;	/*!< Total shared memory size */
+	unsigned long kb_main_buffers;	/*!< Memory used by buffers */
+	unsigned long kb_main_cached;	/*!<
+					 * In-memory cache for files read
+					 * from the disk */
+	unsigned long kb_swap_cached;	/*!<
+					 * Memory that once was swapped out,
+					 * is swapped back in but still also
+					 * is in the swapfile
+					 */
+	unsigned long kb_low_total;	/*!< Total low memory size */
+	unsigned long kb_low_free;	/*!< Available free memory size  */
+	unsigned long kb_high_total;	/*!< Total high memory size */
+	unsigned long kb_high_free;	/*!< Available high memory size */
+	unsigned long kb_swap_total;	/*!< Total swap space size */
+	unsigned long kb_swap_free;	/*!< Available swap memory size */
+	unsigned long kb_active;	/*!< Amount of active memory */
+	unsigned long kb_inactive;	/*!< Amount of inactive memory */
+	unsigned long kb_dirty;		/*!<
+					 * Memory which is waiting to
+					 * get written back to the disk
+					 */
+	unsigned long kb_committed_as;	/*!<
+					 * The amount of memory presently
+					 * allocated on the system
+					 */
+	unsigned long hugepage_total;	/*!< Total hugepages memory in KB */
+	unsigned long hugepage_free;	/*!<
+					 * Amount of hugepages memory in
+					 * kilobytes that is not yet allocated
+					 */
+	unsigned long kb_hugepage_used; /*!<
+					 * Amount of hugepages memory
+					 * that has been allocated
+					 */
+};
+
+/**
+ * @brief RPM source specific structure to get CPU statistics about VE node
+ * from VEOS
+ */
+struct ve_statinfo {
+	unsigned long long user[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Amount of time CPU has
+							  * spent executing normal
+							  * processes in user mode
+							  */
+	unsigned long long nice[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Amount of time CPU has
+							  * spent executing niced
+							  * processes in user mode
+							  */
+	unsigned long long idle[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Amount of time CPU has
+							  * spent executing twiddling
+							  * thumbs
+							  */
+	unsigned long long iowait[VE_MAX_CORE_PER_NODE]; /*!<
+							  * Amount of time CPU has
+							  * spent waiting for I/O to
+							  * complete
+							  */
+	unsigned long long sys[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Amount of time CPU has
+							  * spent executing normal
+							  * processes in kernel
+							  * mode
+							  */
+	unsigned long long hardirq[VE_MAX_CORE_PER_NODE];/*!<
+							  * Amount of time CPU has
+							  * spent servicing interrupts
+							  */
+	unsigned long long softirq[VE_MAX_CORE_PER_NODE];/*!<
+							  * Amount of time CPU has
+							  * spent servicing soft
+							  * interrupts
+							  */
+	unsigned long steal[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Time spent in other
+							  * operating systems when
+							  * running in a virtualized
+							  * environment
+							  */
+	unsigned long guest[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Time spent running
+							  * a virtual CPU for guest
+							  * operating systems
+							  * */
+	unsigned long guest_nice[VE_MAX_CORE_PER_NODE];	 /*!<
+							  * Time spent running a
+							  * niced guest
+							  */
+	unsigned int intr;				 /*!<
+							  * Total number of
+							  * interrupts per second
+							  */
+	unsigned int ctxt;				 /*!<
+							  * The total number of
+							  * context switches across
+							  * all CPUs
+							  */
+	unsigned int running;				 /*!<
+							  * The total number of
+							  * runnable threads
+							  */
+	unsigned int blocked;				 /*!<
+							  * The number of processes
+							  * currently blocked,
+							  * waiting for I/O to complete
+							  */
+	unsigned long btime;				 /*!<
+							  * The time at which the
+							  * VE nodes were booted
+							  */
+	unsigned int processes;				 /*!<
+							  * The number of processes
+							  * and threads created
+							  */
+};
+
+/**
+ * @brief Structure to get virtual memory statistics about VE node
+ */
+struct ve_vmstat {
+	unsigned long pgfree;		/*!<
+					 * Number of pages placed on the
+					 * free list by the system per second
+					 */
+	unsigned long pgscan_direct;	/*!<
+					 * Number of pages scanned
+					 * directly per second
+					 */
+	unsigned long pgsteal;		/*!<
+					 * Number of pages the system has
+					 * reclaimed from cache
+					 */
+	unsigned long pswpin;		/*!<
+					 * Total number of swap pages the
+					 * system brought in per second
+					 */
+	unsigned long pswpout;		/*!<
+					 * Total number of swap pages the
+					 * system brought out per second
+					 */
+	unsigned long pgfault;		/*!<
+					 * Number of page faults (major + minor)
+					 * made by the system per second
+					 */
+	unsigned long pgmajfault;	/*!<
+					 * Number of major faults the system
+					 * has made per second
+					 */
+	unsigned long pgscan_kswapd;	/*!<
+					 * Number of pages scanned directly
+					 * per second
+					 */
+};
+
+
+/**
+ * @brief Structure to get shared memory ID and data length from VEOS for
+ * process's memory mapping
+ */
+struct file_info {
+	unsigned int length;		/*!< Information length */
+	int nodeid;			/*!< VE Nodeid */
+	char file[FILENAME];		/*!< File name */
+};
+
+/**
+ * @brief RPM source structure to get memory map of VE process
+ */
+struct ve_mapinfo {
+	unsigned long long start;		/*!<
+						 * Starting virtual address of
+						 * each mapping
+						 */
+	unsigned long long end;			/*!<
+						 * End  virtual address of each
+						 * mapping
+						 */
+	char perms[32];				/*!< Permissions on map */
+	unsigned long long offset;		/*!< Offset into the file */
+	unsigned long long inode;		/*!< Inode number of the device */
+	unsigned int dev_major;			/*!< Major number of device */
+	unsigned int dev_minor;			/*!< Minor number of device */
+	char map_desc[128];			/*!< Name of the file backing
+						 * the map
+						 */
+	unsigned long long size;		/*!<
+						 * Size of the process virtual
+						 * address space mapping
+						 */
+	unsigned long long rss;			/*!< Resident set size */
+	unsigned long long pss;			/*!< Proportional Set Size */
+	unsigned long long shared_dirty;	/*!<
+						 * Shared Pages modified since
+						 * they were mapped
+						 */
+	unsigned long long private_dirty;	/*!<
+						 * Private Pages modified since
+						 * they were mapped
+						 */
+	unsigned long long shared_clean;	/*!<
+						 * Shared Pages not modified
+						 * since they were mapped
+						 */
+	unsigned long long private_clean;	/*!<
+						 * Private Pages not modified
+						 * since they were mapped
+						 */
+	unsigned long long referenced;		/*!<
+						 * Amount of memory currently
+						 * marked as referenced
+						 */
+	unsigned long long anonymous;		/*!<
+						 * Amount of memory that does
+						 * not belong to any file
+						 */
+	unsigned long long anon_hugepage;	/*!< Anonymous pages */
+	unsigned long long swap;		/*!< Swap memory */
+	unsigned long long mmu_pagesize;	/*!< MMU page size */
+	unsigned long long locked;		/*!<
+						 * Number of pages locked within
+						 * the mapping
+						 */
+	unsigned long long pagesize;		/*!< Page size */
+	char vmflags[VMFLAGS_LENGTH];		/*!<
+						 * Flags associated with the
+						 * mapping
+						 */
+};
+
+/**
+ * @brief RPM source specific structure to get given process's
+ * statistics from VEOS
+ */
+struct ve_pidstat {
+	char state;			/*!< Process state
+					 *(running, sleeping, stopped, zombie)
+					 */
+	int processor;			/*!< Core on which task is scheduled on */
+	long priority;			/*!< Scheduling priority */
+	long nice;			/*!< Nice level */
+	unsigned int policy;		/*!< Scheduling policy */
+	unsigned int rt_priority;	/*!< Scheduling real time priority */
+	unsigned long long utime;	/*!<
+					 * CPU time accumulated by process
+					 */
+	long cguest_time;		/*!<
+					 * Guest time accumulated by process's
+					 * children
+					 */
+	long guest_time;		/*!< Guest time of the task */
+	unsigned long long cutime;	/*!<
+					 * Cumulative utime of process and
+					 * reaped children
+					 */
+	unsigned long long stime;	/*!< System time accumulated by process */
+	unsigned long long cstime;	/*!<
+					 * Cumulative stime of process and
+					 * reaped children
+					 */
+	unsigned long long wchan;	/*!<
+					 * Address where VE process went
+					 * to sleep
+					 */
+	unsigned long flags;		/*!< Task flags */
+	unsigned long vsize;		/*!< Process's virtual memory size */
+	unsigned long rsslim;		/*!< Current limit in bytes on the rss */
+	unsigned long startcode;	/*!<
+					 * Address above which program text
+					 * can run
+					 */
+	unsigned long endcode;		/*!<
+					 * Address below which program text
+					 * can run
+					 */
+	unsigned long startstack;	/*!< Address of the start of the stack */
+	unsigned long kstesp;		/*!< Current value of ESP */
+	unsigned long ksteip;		/*!< Current value of EIP */
+	long rss;			/*!< Resident set memory size */
+	unsigned long min_flt;		/*!<
+					 * Number of minor page faults since
+					 * process start
+					 */
+	unsigned long maj_flt;		/*!<
+					 * Number of major page faults since
+					 * process start
+					 */
+	unsigned long cmin_flt;		/*!<
+					 * Number of minor page faults of child
+					 * process since process start
+					 */
+	unsigned long cmaj_flt;		/*!<
+					 * Number of major page faults of child
+					 * process since process start
+					 */
+	unsigned long maj_delta;	/*!< Major page faults since last update */
+	unsigned long min_delta;	/*!< Minor page faults since last update */
+	unsigned long long blkio;	/*!< Time spent waiting for block IO */
+	unsigned long long nswap;	/*!< Size of swap space of the process */
+	unsigned long long cnswap;	/*!<
+					 * Size of swap space of the children
+					 * of the process
+					 */
+	unsigned long long itrealvalue;	/*!< (Obsolete, always 0) */
+	char cmd[255];			/*!< Only command name without path */
+	unsigned long start_time;       /*!< Start time of VE process */
+	bool whole;			/*!<
+					 * Flag to get statistics of single
+					 * thread (0) or the whole thread group (1)
+					 */
+	pid_t tgid;			/* Thread Group ID of process */
+};
+
+/**
+ * @brief RPM source specific structure to get overall VE process information
+ */
+struct ve_pidstatus {
+	unsigned long vm_swap;	/*!< Size of swap usage */
+	unsigned long nvcsw;	/*!<
+				 * Total number of voluntary context
+				 * switches task made per second
+				 */
+	unsigned long nivcsw;	/*!<
+				 * Total number of non-voluntary context
+				 * switches task made per second
+				 */
+	char cmd[255];          /*!< Only command name without path */
+	unsigned long long sigpnd;	/*!< mask of PER TASK pending signals */
+	unsigned long long blocked;	/*!< blocked signals for VE task */
+	unsigned long long sigignore;	/*!< signal with ignore disposition */
+	unsigned long long sigcatch;	/*!< signal with changed default action */
+
+};
+
+/**
+ * @brief RPM Source specific structure used to get CPU information
+ */
+struct ve_cpuinfo {
+	int cores;			/*!< VE cores on specified nodes */
+	int thread_per_core;		/*!< Threads per each VE core */
+	int core_per_socket;		/*!< Cores per each VE socket */
+	int socket;			/*!< Logical socket number */
+	char vendor[VE_DATA_LEN];	/*!< Vendor ID */
+	char family[VE_DATA_LEN];	/*!< CPU family */
+	char model[VE_DATA_LEN];	/*!< Model number */
+	char modelname[VE_DATA_LEN];	/*!<
+					 * Displays the common name of the
+					 * processor, including its project name
+					 */
+	char mhz[VE_DATA_LEN];		/*!<
+					 * Shows the precise speed in megahertz
+					 * for the processor.
+					 */
+	char stepping[VE_DATA_LEN];	/*!< Incremental version of the CPU */
+	char bogomips[VE_DATA_LEN];	/*!<
+					 * Linux-specific measurement of the
+					 * CPU's speed in MIPS
+					 */
+	char op_mode[VE_DATA_LEN];	/*!<
+					 * VE sysfs: Operation mode,
+					 * 32 bit or 64 bit
+					 */
+	char cache_name[VE_MAX_CACHE][VE_BUF_LEN];	/*!<
+							 * Name of hardware
+							 * cache of VE node
+							 */
+	int cache_size[VE_MAX_CACHE];	/*!< VE hardware Cache size */
+};
+
+/**
+ * @brief RPM source specific structure to get memory statistics of VE process
+ */
+struct ve_pidstatm {
+	long size;	/*!< Total program size (as # pages) */
+	long resident;	/*!< Resident non-swapped memory (as # pages) */
+	long share;	/*!< Shared (mmap'd) memory (as # pages) */
+	long trs;	/*!< Text (exe) resident set (as # pages) */
+	long drs;	/*!< Data+stack resident set (as # pages) */
+	long dt;	/*!< Dirty pages */
+};
+
+/**
+ * @brief RPM source specific structure to get the resource usage of VE process
+ */
+struct ve_get_rusage_info {
+	struct timeval utime;		/*!< User CPU time used */
+	struct timeval stime;		/*!< System CPU time used */
+	struct timeval elapsed;         /*!< Elapsed real (wall clock) time */
+	long ru_maxrss;                 /*!< Maximum resident set size */
+	long ru_ixrss;                  /*!< Integral shared memory size */
+	long ru_idrss;                  /*!<
+					 * Integral unshared data size
+					 * (average rss)
+					 */
+	long ru_isrss;                  /*!< Integral unshared stack size */
+	long ru_minflt;                 /*!< Page reclaims (soft page faults) */
+	long ru_majflt;                 /*!< Page faults (hard page faults) */
+	long ru_nswap;                  /*!< Swaps */
+	long ru_nvcsw;                  /*!< Voluntary context switches */
+	long ru_nivcsw;                 /*!< Involuntary context switches */
+	long page_size;                 /*!< Page Size */
+};
+
+/**
+ * @brief Structure to get fan related power Management information
+ */
+struct ve_pwr_fan {
+	char device_name[MAX_POWER_DEV][MAX_DEVICE_LEN];	/*!<
+								 * Fan device
+								 * name
+								 */
+	int count;
+	double fan_min[MAX_POWER_DEV];		/*!<
+						 * Minimum value for fan
+						 * for given node
+						 */
+	double fan_max[MAX_POWER_DEV];		/*!<
+						 * Maximum value for fan
+						 * for given node
+						 */
+	double fan_speed[MAX_POWER_DEV];	/*!< VE node fan speed */
+};
+
+
+/**
+ * @brief Structure to get temperature related power Management information
+ */
+struct ve_pwr_temp {
+	char device_name[MAX_POWER_DEV][MAX_DEVICE_LEN];	/*!<
+								 * Fan device
+								 * name
+								 */
+	int count;
+	double temp_min[MAX_POWER_DEV];			/*!<
+							* Min value for
+							* temperature
+							* for given node
+							*/
+	double temp_max[MAX_POWER_DEV];			/*!<
+							* Max value
+							* for temperature
+							* for given node
+							*/
+	double ve_temp[MAX_POWER_DEV];			/*!<
+							* Temperature
+							* at cores for
+							* given node
+							*/
+};
+
+/**
+ * @brief Structure to get voltage related power Management information
+ */
+struct ve_pwr_voltage {
+	char device_name[MAX_POWER_DEV][MAX_DEVICE_LEN];	/*!<
+								 *Voltage
+								 * device name
+								 */
+	int count;
+	double volt_min[MAX_POWER_DEV];				/*!<
+								 * Minimum value
+								 * for voltage
+								 * for given
+								 * node
+								 */
+	double volt_max[MAX_POWER_DEV];				/*!<
+								 * Maximum value
+								 * for voltage
+								 * for given
+								 * node
+								 */
+	double cpu_volt[MAX_POWER_DEV];				/*!<
+								 * Voltage of
+								 * VE node
+								 */
+};
+
+/*
+ * @brief To uniquely identify the requests of VE shared memory
+ */
+enum ipc_mode {
+	SHMKEY_RM = 0,	/*!< Delete shm segment using key */
+	SHMID_RM,	/*!< Delete shm segment using shmid */
+	SHM_RM_ALL,	/*!< Delete all shm segment */
+	SHMID_INFO,	/*!< Information of given shm segment */
+	SHM_LS,		/*!< List All segment */
+	SHM_SUMMARY,	/*!< Summary of shared Memory */
+	SHMID_QUERY,	/*!< Query whether shmid is valid or not */
+	SHMKEY_QUERY,	/*!< Query whether shmkey is valid or not */
+};
+
+/*
+ * @brief Structure to get information of each VE shared memory
+ */
+struct ve_shm_data {
+	int             id;		/*!< SHM ID */
+	key_t           key;		/*!< SHM key */
+	uid_t           uid;		/*!< Current uid */
+	gid_t           gid;		/*!< Current gid */
+	uid_t           cuid;		/*!< Creator uid */
+	gid_t           cgid;		/*!< Creator gid */
+	unsigned int    mode;		/*!< Permissions + SHM_DEST */
+	uint64_t        shm_nattch;	/*!< No. of current attaches */
+	uint64_t        shm_segsz;	/*!< Size of segment (bytes) */
+	int64_t         shm_atim;	/*!< Last attach time */
+	int64_t         shm_dtim;	/*!< Last detach time */
+	int64_t         shm_ctim;	/*!< Last change time */
+	pid_t           shm_cprid;	/*!< PID of creator */
+	pid_t           shm_lprid;	/*!< PID of last shmat(2)/shmdt(2) */
+	uint64_t        shm_rss;	/*!< Resident shared memory */
+	uint64_t        shm_swp;	/*!< Swapped shared memory */
+};
+
+/*
+ * @brief Structure to get information of removed VE shared memory
+ */
+struct ipcrm_info {
+        int shmid;      /*!< Shmid of deleted shm segment */
+        int shm_errno;  /*!< Error occured while deleting the segment */
+};
+
+/**
+ * @brief Structure to get the NUMA information for given VE node
+ */
+struct ve_numa_stat {
+	int tot_numa_nodes;                        /*!< NUMA node count */
+	char ve_core[VE_NUMA_NUM][MAX_CORE_IN_HEX];/*!< list of cores in each NUMA node */
+	unsigned long long mem_size[VE_NUMA_NUM];  /*!< Memory size of each NUMA node */
+	unsigned long long mem_free[VE_NUMA_NUM];  /*!< Free memory in each NUMA node */
+};
+
+/**
+ * @brief To uniquely identify the request while creating task in VEOS.
+ */
+enum create_task_flag {
+	DEFAULT_TASK_STRUCT = 0,	/*!< Default task_struct */
+	PRESERVE_TASK_STRUCT,		/*!< Preserve task_struct when task exited */
+};
+
+/**
+ * @brief Structure to get swap status informations of VE process
+ */
+struct ve_swap_status_struct {
+	pid_t pid;		/*!< VE process ID */
+	int proc_state;		/*!< VE process state */
+	int proc_substate;	/*!< VE process sub state */
+};
+
+/**
+ * @brief Structure to get swap status informations of VE node
+ */
+struct ve_swap_status_info {
+	int len;		/*!< 
+				 * the length of structure 
+				 * ve_swap_status_struct array 
+				 */
+	struct ve_swap_status_struct ve_swap_status[MAX_SWAP_PROCESS];	
+				/*!< 
+ 				 * Structure array of 
+ 				 * VE process state for PPS
+ 				 */
+};
+
+/**
+ * @brief Structure of VE process ID for PPS
+ */
+struct ve_swap_pids {
+	pid_t pid[MAX_SWAP_PROCESS + 1]; /*!< VE process ID array */
+	int process_num; 		 /*!< Number of PIDs */
+};
+
+/**
+ * @brief Structure to get swap informations of VE process
+ */
+struct ve_swap_struct {
+	pid_t pid;			 /*!< VE process ID */
+	int proc_state;			 /*!< VE process state */
+	int proc_substate;		 /*!< VE process sub state */
+	unsigned long long swapped_sz;	 /*!< swapped memory size of VE process*/
+	unsigned long long swappable_sz; /*!< swappable memory size of VE process*/
+};
+
+
+/**
+ * @brief Structure to get swap informations of VE node
+ */
+struct ve_swap_info {
+	int len;			/*!< the length of structure ve_swap_struct array */
+	struct ve_swap_struct ve_swap[MAX_SWAP_PROCESS];	/*!< Structure array of VE process state for PPS*/
+};
+
+/**
+ * @brief Information for swap about VE nodes
+ */
+struct ve_swap_node_info {
+	int node_num;				/*!< number of VE nodes*/
+	unsigned long long node_swapped_sz;	/*!< swapped memory size of VE nodes*/
+};
+
+/**
+ * @brief This contains 'cns(Current Non-swappable memory Size)' or
+ *        'mns(Maximum Non-swappable memory Size) of process specified by pid'
+ */
+struct ve_ns_info_proc {
+	pid_t pid;
+	int64_t ns;
+};
+
+/**
+ * @brief This contains 'cns(Current Non-swappable memory Size)' of some processes.
+ *        VEOS returns Current non-swappable memory size of each VE process
+ *        by using this.
+ */
+struct ve_cns_info {
+	/* The size of struct ve_ns_info_proc is 16 byte, because of 'aligned'.
+	 * And this is sent by protobuf messages.
+	 * The size of protobuf messages should be less than 4096 byte.
+	 * This is why 'MAX_SWAP_PROCESS / NS_DIV'
+	 * */
+	struct ve_ns_info_proc info[MAX_SWAP_PROCESS / NS_DIV];
+};
+
+int ve_match_envrn(char *);
+char *ve_create_sockpath(int);
+int ve_arch_info(int, struct ve_archinfo *);
+int ve_get_nos(unsigned int *, int *);
+int ve_node_info(struct ve_nodeinfo *);
+int ve_create_process(int, int, int, int, int, cpu_set_t *);
+int ve_check_pid(int, int);
+int ve_mem_info(int, struct ve_meminfo *);
+int ve_uptime_info(int, double *);
+int ve_loadavg_info(int, struct ve_loadavg *);
+int ve_stat_info(int, struct ve_statinfo *);
+int ve_acct(int, char *);
+int ve_prlimit(int, pid_t, int, struct rlimit *, struct rlimit *);
+int ve_sched_getaffinity(int, pid_t, size_t, cpu_set_t *);
+int ve_sched_setaffinity(int, pid_t, size_t, cpu_set_t *);
+int ve_core_info(int, int *);
+int ve_pidstat_info(int, pid_t, struct ve_pidstat *);
+int ve_map_info(int, pid_t, unsigned int *, char *);
+int ve_vmstat_info(int, struct ve_vmstat *);
+int ve_pidstatus_info(int, pid_t, struct ve_pidstatus *);
+int ve_pidstatm_info(int, pid_t, struct ve_pidstatm *);
+int ve_cpu_info(int, struct ve_cpuinfo *);
+int ve_get_rusage(int, pid_t, struct ve_get_rusage_info *);
+int ve_read_fan(int, struct ve_pwr_fan *);
+int ve_read_temp(int, struct ve_pwr_temp *);
+int ve_read_voltage(int, struct ve_pwr_voltage *);
+int ve_cpufreq_info(int, unsigned long *);
+int ve_shm_info(int, int, int *, bool *, struct ve_shm_data *,
+				struct shm_info *);
+int ve_get_regvals(int, pid_t, int, int *, uint64_t *);
+int ve_check_node_status(int);
+int ve_numa_info(int, struct ve_numa_stat *);
+int ve_delete_dummy_task(int, pid_t);
+int ve_shm_list_or_remove(int , int , unsigned int *, char *);
+int ve_chk_exec_format(char *);
+int ve_swap_statusinfo(int, struct ve_swap_pids *, struct ve_swap_status_info *);
+int ve_swap_info(int, struct ve_swap_pids *, struct ve_swap_info *);
+int ve_swap_nodeinfo(int, struct ve_swap_node_info *);
+int ve_swap_out(int, struct ve_swap_pids *);
+int ve_swap_in(int, struct ve_swap_pids *);
+int verify_version(int);
+int ve_swap_get_cns(int, struct ve_swap_pids *, struct ve_cns_info *);
+
+#ifdef __cplusplus 
+} //extern "C"
+#endif
+#endif

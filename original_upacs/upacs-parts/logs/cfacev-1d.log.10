@@ -1,0 +1,1197 @@
+Array size =    10^3
+Block =  5832
+Grid points =  5832000
+Memory size =       2.81652933 [GB]
+Memory size / block =       0.00048294 [GB]
+Number of Threads =     8
+Performance:  0.10053E+03 [GB/s]  0.24394E+02 [GFLOPS] 0.94674E-01 [sec]/itr  0.17988E+01 [sec]
+Array size =    11^3
+Block =  4381
+Grid points =  5831111
+Memory size =       2.60231393 [GB]
+Memory size / block =       0.00059400 [GB]
+Number of Threads =     8
+Performance:  0.12726E+03 [GB/s]  0.30880E+02 [GFLOPS] 0.74778E-01 [sec]/itr  0.14208E+01 [sec]
+Array size =    12^3
+Block =  3375
+Grid points =  5832000
+Memory size =       2.43302393 [GB]
+Memory size / block =       0.00072090 [GB]
+Number of Threads =     8
+Performance:  0.15728E+03 [GB/s]  0.38163E+02 [GFLOPS] 0.60515E-01 [sec]/itr  0.11498E+01 [sec]
+Array size =    13^3
+Block =  2654
+Grid points =  5830838
+Memory size =       2.29488189 [GB]
+Memory size / block =       0.00086469 [GB]
+Number of Threads =     8
+Performance:  0.20033E+03 [GB/s]  0.48609E+02 [GFLOPS] 0.47501E-01 [sec]/itr  0.90252E+00 [sec]
+Array size =    14^3
+Block =  2125
+Grid points =  5831000
+Memory size =       2.18116794 [GB]
+Memory size / block =       0.00102643 [GB]
+Number of Threads =     8
+Performance:  0.23068E+03 [GB/s]  0.55975E+02 [GFLOPS] 0.41252E-01 [sec]/itr  0.78379E+00 [sec]
+Array size =    15^3
+Block =  1728
+Grid points =  5832000
+Memory size =       2.08601389 [GB]
+Memory size / block =       0.00120718 [GB]
+Number of Threads =     8
+Performance:  0.27173E+03 [GB/s]  0.65934E+02 [GFLOPS] 0.35027E-01 [sec]/itr  0.66551E+00 [sec]
+Array size =    16^3
+Block =  1423
+Grid points =  5828608
+Memory size =       2.00358394 [GB]
+Memory size / block =       0.00140800 [GB]
+Number of Threads =     8
+Performance:  0.30557E+03 [GB/s]  0.74145E+02 [GFLOPS] 0.31130E-01 [sec]/itr  0.59147E+00 [sec]
+Array size =    17^3
+Block =  1187
+Grid points =  5831731
+Memory size =       1.93473398 [GB]
+Memory size / block =       0.00162994 [GB]
+Number of Threads =     8
+Performance:  0.35801E+03 [GB/s]  0.86869E+02 [GFLOPS] 0.26584E-01 [sec]/itr  0.50510E+00 [sec]
+Array size =    18^3
+Block =  1000
+Grid points =  5832000
+Memory size =       1.87404795 [GB]
+Memory size / block =       0.00187405 [GB]
+Number of Threads =     8
+Performance:  0.38641E+03 [GB/s]  0.93760E+02 [GFLOPS] 0.24632E-01 [sec]/itr  0.46800E+00 [sec]
+Array size =    19^3
+Block =   850
+Grid points =  5830150
+Memory size =       1.82018315 [GB]
+Memory size / block =       0.00214139 [GB]
+Number of Threads =     8
+Performance:  0.43830E+03 [GB/s]  0.10635E+03 [GFLOPS] 0.21708E-01 [sec]/itr  0.41246E+00 [sec]
+Array size =    20^3
+Block =   729
+Grid points =  5832000
+Memory size =       1.77367445 [GB]
+Memory size / block =       0.00243302 [GB]
+Number of Threads =     8
+Performance:  0.46702E+03 [GB/s]  0.11332E+03 [GFLOPS] 0.20380E-01 [sec]/itr  0.38722E+00 [sec]
+Array size =    21^3
+Block =   629
+Grid points =  5825169
+Memory size =       1.72974995 [GB]
+Memory size / block =       0.00275000 [GB]
+Number of Threads =     8
+Performance:  0.51514E+03 [GB/s]  0.12500E+03 [GFLOPS] 0.18455E-01 [sec]/itr  0.35064E+00 [sec]
+Array size =    22^3
+Block =   547
+Grid points =  5824456
+Memory size =       1.69207662 [GB]
+Memory size / block =       0.00309338 [GB]
+Number of Threads =     8
+Performance:  0.54933E+03 [GB/s]  0.13329E+03 [GFLOPS] 0.17304E-01 [sec]/itr  0.32877E+00 [sec]
+Array size =    23^3
+Block =   479
+Grid points =  5827993
+Memory size =       1.65935559 [GB]
+Memory size / block =       0.00346421 [GB]
+Number of Threads =     8
+Performance:  0.57477E+03 [GB/s]  0.13947E+03 [GFLOPS] 0.16548E-01 [sec]/itr  0.31441E+00 [sec]
+Array size =    24^3
+Block =   421
+Grid points =  5819904
+Memory size =       1.62655535 [GB]
+Memory size / block =       0.00386355 [GB]
+Number of Threads =     8
+Performance:  0.62620E+03 [GB/s]  0.15194E+03 [GFLOPS] 0.15168E-01 [sec]/itr  0.28819E+00 [sec]
+Array size =    25^3
+Block =   373
+Grid points =  5828125
+Memory size =       1.60108903 [GB]
+Memory size / block =       0.00429246 [GB]
+Number of Threads =     8
+Performance:  0.65636E+03 [GB/s]  0.15926E+03 [GFLOPS] 0.14491E-01 [sec]/itr  0.27533E+00 [sec]
+Array size =    26^3
+Block =   331
+Grid points =  5817656
+Memory size =       1.57291196 [GB]
+Memory size / block =       0.00475200 [GB]
+Number of Threads =     8
+Performance:  0.69919E+03 [GB/s]  0.16966E+03 [GFLOPS] 0.13579E-01 [sec]/itr  0.25800E+00 [sec]
+Array size =    27^3
+Block =   296
+Grid points =  5826168
+Memory size =       1.55199189 [GB]
+Memory size / block =       0.00524322 [GB]
+Number of Threads =     8
+Performance:  0.73612E+03 [GB/s]  0.17862E+03 [GFLOPS] 0.12917E-01 [sec]/itr  0.24542E+00 [sec]
+Array size =    28^3
+Block =   265
+Grid points =  5817280
+Memory size =       1.52829948 [GB]
+Memory size / block =       0.00576717 [GB]
+Number of Threads =     8
+Performance:  0.68403E+03 [GB/s]  0.16598E+03 [GFLOPS] 0.13879E-01 [sec]/itr  0.26370E+00 [sec]
+Array size =    29^3
+Block =   239
+Grid points =  5828971
+Memory size =       1.51165393 [GB]
+Memory size / block =       0.00632491 [GB]
+Number of Threads =     8
+Performance:  0.77840E+03 [GB/s]  0.18888E+03 [GFLOPS] 0.12221E-01 [sec]/itr  0.23220E+00 [sec]
+Array size =    30^3
+Block =   216
+Grid points =  5832000
+Memory size =       1.49418082 [GB]
+Memory size / block =       0.00691750 [GB]
+Number of Threads =     8
+Performance:  0.82572E+03 [GB/s]  0.20036E+03 [GFLOPS] 0.11527E-01 [sec]/itr  0.21901E+00 [sec]
+Array size =    31^3
+Block =   195
+Grid points =  5809245
+Memory size =       1.47146996 [GB]
+Memory size / block =       0.00754600 [GB]
+Number of Threads =     8
+Performance:  0.83419E+03 [GB/s]  0.20241E+03 [GFLOPS] 0.11365E-01 [sec]/itr  0.21594E+00 [sec]
+Array size =    32^3
+Block =   177
+Grid points =  5799936
+Memory size =       1.45342767 [GB]
+Memory size / block =       0.00821146 [GB]
+Number of Threads =     8
+Performance:  0.86245E+03 [GB/s]  0.20927E+03 [GFLOPS] 0.10975E-01 [sec]/itr  0.20853E+00 [sec]
+Array size =    33^3
+Block =   162
+Grid points =  5821794
+Memory size =       1.44421830 [GB]
+Memory size / block =       0.00891493 [GB]
+Number of Threads =     8
+Performance:  0.87704E+03 [GB/s]  0.21281E+03 [GFLOPS] 0.10833E-01 [sec]/itr  0.20583E+00 [sec]
+Array size =    34^3
+Block =   148
+Grid points =  5816992
+Memory size =       1.42930582 [GB]
+Memory size / block =       0.00965747 [GB]
+Number of Threads =     8
+Performance:  0.89072E+03 [GB/s]  0.21613E+03 [GFLOPS] 0.10658E-01 [sec]/itr  0.20250E+00 [sec]
+Array size =    35^3
+Block =   136
+Grid points =  5831000
+Memory size =       1.41985954 [GB]
+Memory size / block =       0.01044014 [GB]
+Number of Threads =     8
+Performance:  0.90131E+03 [GB/s]  0.21870E+03 [GFLOPS] 0.10558E-01 [sec]/itr  0.20061E+00 [sec]
+Array size =    36^3
+Block =   125
+Grid points =  5832000
+Memory size =       1.40799996 [GB]
+Memory size / block =       0.01126400 [GB]
+Number of Threads =     8
+Performance:  0.87534E+03 [GB/s]  0.21240E+03 [GFLOPS] 0.10873E-01 [sec]/itr  0.20659E+00 [sec]
+Array size =    37^3
+Block =   115
+Grid points =  5825095
+Memory size =       1.39496100 [GB]
+Memory size / block =       0.01213010 [GB]
+Number of Threads =     8
+Performance:  0.94772E+03 [GB/s]  0.22996E+03 [GFLOPS] 0.10031E-01 [sec]/itr  0.19059E+00 [sec]
+Array size =    38^3
+Block =   106
+Grid points =  5816432
+Memory size =       1.38218569 [GB]
+Memory size / block =       0.01303949 [GB]
+Number of Threads =     8
+Performance:  0.95666E+03 [GB/s]  0.23213E+03 [GFLOPS] 0.99225E-02 [sec]/itr  0.18853E+00 [sec]
+Array size =    39^3
+Block =    98
+Grid points =  5813262
+Memory size =       1.37133670 [GB]
+Memory size / block =       0.01399323 [GB]
+Number of Threads =     8
+Performance:  0.97272E+03 [GB/s]  0.23603E+03 [GFLOPS] 0.97533E-02 [sec]/itr  0.18531E+00 [sec]
+Array size =    40^3
+Block =    91
+Grid points =  5824000
+Memory size =       1.36430691 [GB]
+Memory size / block =       0.01499238 [GB]
+Number of Threads =     8
+Performance:  0.97609E+03 [GB/s]  0.23685E+03 [GFLOPS] 0.97375E-02 [sec]/itr  0.18501E+00 [sec]
+Array size =    41^3
+Block =    84
+Grid points =  5789364
+Memory size =       1.34719196 [GB]
+Memory size / block =       0.01603800 [GB]
+Number of Threads =     8
+Performance:  0.93631E+03 [GB/s]  0.22719E+03 [GFLOPS] 0.10091E-01 [sec]/itr  0.19173E+00 [sec]
+Array size =    42^3
+Block =    78
+Grid points =  5778864
+Memory size =       1.33622857 [GB]
+Memory size / block =       0.01713114 [GB]
+Number of Threads =     8
+Performance:  0.98849E+03 [GB/s]  0.23985E+03 [GFLOPS] 0.95409E-02 [sec]/itr  0.18128E+00 [sec]
+Array size =    43^3
+Block =    73
+Grid points =  5804011
+Memory size =       1.33391787 [GB]
+Memory size / block =       0.01827285 [GB]
+Number of Threads =     8
+Performance:  0.98790E+03 [GB/s]  0.23971E+03 [GFLOPS] 0.95881E-02 [sec]/itr  0.18217E+00 [sec]
+Array size =    44^3
+Block =    68
+Grid points =  5792512
+Memory size =       1.32356502 [GB]
+Memory size / block =       0.01946419 [GB]
+Number of Threads =     8
+Performance:  0.63293E+03 [GB/s]  0.15358E+03 [GFLOPS] 0.14936E-01 [sec]/itr  0.28378E+00 [sec]
+Array size =    45^3
+Block =    64
+Grid points =  5832000
+Memory size =       1.32519830 [GB]
+Memory size / block =       0.02070622 [GB]
+Number of Threads =     8
+Performance:  0.98758E+03 [GB/s]  0.23963E+03 [GFLOPS] 0.96375E-02 [sec]/itr  0.18311E+00 [sec]
+Array size =    46^3
+Block =    59
+Grid points =  5742824
+Memory size =       1.29799996 [GB]
+Memory size / block =       0.02200000 [GB]
+Number of Threads =     8
+Performance:  0.88822E+03 [GB/s]  0.21552E+03 [GFLOPS] 0.10552E-01 [sec]/itr  0.20048E+00 [sec]
+Array size =    47^3
+Block =    56
+Grid points =  5814088
+Memory size =       1.30740822 [GB]
+Memory size / block =       0.02334658 [GB]
+Number of Threads =     8
+Performance:  0.95874E+03 [GB/s]  0.23264E+03 [GFLOPS] 0.98969E-02 [sec]/itr  0.18804E+00 [sec]
+Array size =    48^3
+Block =    52
+Grid points =  5750784
+Memory size =       1.28684438 [GB]
+Memory size / block =       0.02474701 [GB]
+Number of Threads =     8
+Performance:  0.95334E+03 [GB/s]  0.23132E+03 [GFLOPS] 0.98447E-02 [sec]/itr  0.18705E+00 [sec]
+Array size =    49^3
+Block =    49
+Grid points =  5764801
+Memory size =       1.28391521 [GB]
+Memory size / block =       0.02620235 [GB]
+Number of Threads =     8
+Performance:  0.96276E+03 [GB/s]  0.23361E+03 [GFLOPS] 0.97721E-02 [sec]/itr  0.18567E+00 [sec]
+Array size =    50^3
+Block =    46
+Grid points =  5750000
+Memory size =       1.27482851 [GB]
+Memory size / block =       0.02771366 [GB]
+Number of Threads =     8
+Performance:  0.96000E+03 [GB/s]  0.23294E+03 [GFLOPS] 0.97750E-02 [sec]/itr  0.18573E+00 [sec]
+Array size =    51^3
+Block =    43
+Grid points =  5703993
+Memory size =       1.25912596 [GB]
+Memory size / block =       0.02928200 [GB]
+Number of Threads =     8
+Performance:  0.93654E+03 [GB/s]  0.22725E+03 [GFLOPS] 0.99397E-02 [sec]/itr  0.18885E+00 [sec]
+Array size =    52^3
+Block =    41
+Grid points =  5764928
+Memory size =       1.26724502 [GB]
+Memory size / block =       0.03090842 [GB]
+Number of Threads =     8
+Performance:  0.96358E+03 [GB/s]  0.23381E+03 [GFLOPS] 0.97640E-02 [sec]/itr  0.18552E+00 [sec]
+Array size =    53^3
+Block =    39
+Grid points =  5806203
+Memory size =       1.27116472 [GB]
+Memory size / block =       0.03259397 [GB]
+Number of Threads =     8
+Performance:  0.96598E+03 [GB/s]  0.23439E+03 [GFLOPS] 0.98094E-02 [sec]/itr  0.18638E+00 [sec]
+Array size =    54^3
+Block =    37
+Grid points =  5826168
+Memory size =       1.27056931 [GB]
+Memory size / block =       0.03433971 [GB]
+Number of Threads =     8
+Performance:  0.97063E+03 [GB/s]  0.23552E+03 [GFLOPS] 0.97960E-02 [sec]/itr  0.18612E+00 [sec]
+Array size =    55^3
+Block =    35
+Grid points =  5823125
+Memory size =       1.26513460 [GB]
+Memory size / block =       0.03614670 [GB]
+Number of Threads =     8
+Performance:  0.97037E+03 [GB/s]  0.23546E+03 [GFLOPS] 0.97935E-02 [sec]/itr  0.18608E+00 [sec]
+Array size =    56^3
+Block =    33
+Grid points =  5795328
+Memory size =       1.25452796 [GB]
+Memory size / block =       0.03801600 [GB]
+Number of Threads =     8
+Performance:  0.94222E+03 [GB/s]  0.22863E+03 [GFLOPS] 0.10038E-01 [sec]/itr  0.19072E+00 [sec]
+Array size =    57^3
+Block =    31
+Grid points =  5740983
+Memory size =       1.23840830 [GB]
+Memory size / block =       0.03994865 [GB]
+Number of Threads =     8
+Performance:  0.97718E+03 [GB/s]  0.23711E+03 [GFLOPS] 0.95881E-02 [sec]/itr  0.18217E+00 [sec]
+Array size =    58^3
+Block =    29
+Grid points =  5658248
+Memory size =       1.21642608 [GB]
+Memory size / block =       0.04194573 [GB]
+Number of Threads =     8
+Performance:  0.10060E+04 [GB/s]  0.24411E+03 [GFLOPS] 0.91790E-02 [sec]/itr  0.17440E+00 [sec]
+Array size =    59^3
+Block =    28
+Grid points =  5750612
+Memory size =       1.23223158 [GB]
+Memory size / block =       0.04400827 [GB]
+Number of Threads =     8
+Performance:  0.10016E+04 [GB/s]  0.24303E+03 [GFLOPS] 0.93703E-02 [sec]/itr  0.17804E+00 [sec]
+Array size =    60^3
+Block =    27
+Grid points =  5832000
+Memory size =       1.24570825 [GB]
+Memory size / block =       0.04613734 [GB]
+Number of Threads =     8
+Performance:  0.74865E+03 [GB/s]  0.18166E+03 [GFLOPS] 0.12713E-01 [sec]/itr  0.24155E+00 [sec]
+Array size =    61^3
+Block =    25
+Grid points =  5674525
+Memory size =       1.20834997 [GB]
+Memory size / block =       0.04833400 [GB]
+Number of Threads =     8
+Performance:  0.99931E+03 [GB/s]  0.24248E+03 [GFLOPS] 0.92672E-02 [sec]/itr  0.17608E+00 [sec]
+Array size =    62^3
+Block =    24
+Grid points =  5719872
+Memory size =       1.21438307 [GB]
+Memory size / block =       0.05059929 [GB]
+Number of Threads =     8
+Performance:  0.10257E+04 [GB/s]  0.24888E+03 [GFLOPS] 0.91009E-02 [sec]/itr  0.17292E+00 [sec]
+Array size =    63^3
+Block =    23
+Grid points =  5751081
+Memory size =       1.21748859 [GB]
+Memory size / block =       0.05293429 [GB]
+Number of Threads =     8
+Performance:  0.10340E+04 [GB/s]  0.25091E+03 [GFLOPS] 0.90768E-02 [sec]/itr  0.17246E+00 [sec]
+Array size =    64^3
+Block =    22
+Grid points =  5767168
+Memory size =       1.21748067 [GB]
+Memory size / block =       0.05534003 [GB]
+Number of Threads =     8
+Performance:  0.94869E+03 [GB/s]  0.23020E+03 [GFLOPS] 0.99211E-02 [sec]/itr  0.18850E+00 [sec]
+Array size =    65^3
+Block =    21
+Grid points =  5767125
+Memory size =       1.21416923 [GB]
+Memory size / block =       0.05781758 [GB]
+Number of Threads =     8
+Performance:  0.10365E+04 [GB/s]  0.25150E+03 [GFLOPS] 0.90808E-02 [sec]/itr  0.17254E+00 [sec]
+Array size =    66^3
+Block =    20
+Grid points =  5749920
+Memory size =       1.20735997 [GB]
+Memory size / block =       0.06036800 [GB]
+Number of Threads =     8
+Performance:  0.10283E+04 [GB/s]  0.24952E+03 [GFLOPS] 0.91253E-02 [sec]/itr  0.17338E+00 [sec]
+Array size =    67^3
+Block =    19
+Grid points =  5714497
+Memory size =       1.19685435 [GB]
+Memory size / block =       0.06299233 [GB]
+Number of Threads =     8
+Performance:  0.10277E+04 [GB/s]  0.24938E+03 [GFLOPS] 0.90743E-02 [sec]/itr  0.17241E+00 [sec]
+Array size =    68^3
+Block =    18
+Grid points =  5659776
+Memory size =       1.18244963 [GB]
+Memory size / block =       0.06569165 [GB]
+Number of Threads =     8
+Performance:  0.10135E+04 [GB/s]  0.24593E+03 [GFLOPS] 0.91134E-02 [sec]/itr  0.17315E+00 [sec]
+Array size =    69^3
+Block =    17
+Grid points =  5584653
+Memory size =       1.16393883 [GB]
+Memory size / block =       0.06846699 [GB]
+Number of Threads =     8
+Performance:  0.10525E+04 [GB/s]  0.25539E+03 [GFLOPS] 0.86594E-02 [sec]/itr  0.16453E+00 [sec]
+Array size =    70^3
+Block =    17
+Grid points =  5831000
+Memory size =       1.21243017 [GB]
+Memory size / block =       0.07131942 [GB]
+Number of Threads =     8
+Performance:  0.10611E+04 [GB/s]  0.25748E+03 [GFLOPS] 0.89681E-02 [sec]/itr  0.17039E+00 [sec]
+Array size =    71^3
+Block =    16
+Grid points =  5726576
+Memory size =       1.18799997 [GB]
+Memory size / block =       0.07425000 [GB]
+Number of Threads =     8
+Performance:  0.95708E+03 [GB/s]  0.23223E+03 [GFLOPS] 0.97649E-02 [sec]/itr  0.18553E+00 [sec]
+Array size =    72^3
+Block =    15
+Grid points =  5598720
+Memory size =       1.15889661 [GB]
+Memory size / block =       0.07725977 [GB]
+Number of Threads =     8
+Performance:  0.10695E+04 [GB/s]  0.25951E+03 [GFLOPS] 0.85433E-02 [sec]/itr  0.16232E+00 [sec]
+Array size =    73^3
+Block =    14
+Grid points =  5446238
+Memory size =       1.12489728 [GB]
+Memory size / block =       0.08034981 [GB]
+Number of Threads =     8
+Performance:  0.10538E+04 [GB/s]  0.25571E+03 [GFLOPS] 0.84342E-02 [sec]/itr  0.16025E+00 [sec]
+Array size =    74^3
+Block =    14
+Grid points =  5673136
+Memory size =       1.16929609 [GB]
+Memory size / block =       0.08352115 [GB]
+Number of Threads =     8
+Performance:  0.10462E+04 [GB/s]  0.25385E+03 [GFLOPS] 0.88500E-02 [sec]/itr  0.16815E+00 [sec]
+Array size =    75^3
+Block =    13
+Grid points =  5484375
+Memory size =       1.12807320 [GB]
+Memory size / block =       0.08677486 [GB]
+Number of Threads =     8
+Performance:  0.10703E+04 [GB/s]  0.25971E+03 [GFLOPS] 0.83625E-02 [sec]/itr  0.15889E+00 [sec]
+Array size =    76^3
+Block =    13
+Grid points =  5706688
+Memory size =       1.17145597 [GB]
+Memory size / block =       0.09011200 [GB]
+Number of Threads =     8
+Performance:  0.97214E+03 [GB/s]  0.23589E+03 [GFLOPS] 0.95802E-02 [sec]/itr  0.18202E+00 [sec]
+Array size =    77^3
+Block =    12
+Grid points =  5478396
+Memory size =       1.12240336 [GB]
+Memory size / block =       0.09353361 [GB]
+Number of Threads =     8
+Performance:  0.10753E+04 [GB/s]  0.26091E+03 [GFLOPS] 0.83148E-02 [sec]/itr  0.15798E+00 [sec]
+Array size =    78^3
+Block =    12
+Grid points =  5694624
+Memory size =       1.16448918 [GB]
+Memory size / block =       0.09704077 [GB]
+Number of Threads =     8
+Performance:  0.10405E+04 [GB/s]  0.25247E+03 [GFLOPS] 0.89321E-02 [sec]/itr  0.16971E+00 [sec]
+Array size =    79^3
+Block =    11
+Grid points =  5423429
+Memory size =       1.10697960 [GB]
+Memory size / block =       0.10063451 [GB]
+Number of Threads =     8
+Performance:  0.10816E+04 [GB/s]  0.26244E+03 [GFLOPS] 0.81834E-02 [sec]/itr  0.15549E+00 [sec]
+Array size =    80^3
+Block =    11
+Grid points =  5632000
+Memory size =       1.14747491 [GB]
+Memory size / block =       0.10431590 [GB]
+Number of Threads =     8
+Performance:  0.10792E+04 [GB/s]  0.26187E+03 [GFLOPS] 0.85166E-02 [sec]/itr  0.16182E+00 [sec]
+Array size =    81^3
+Block =    10
+Grid points =  5314410
+Memory size =       1.08085997 [GB]
+Memory size / block =       0.10808600 [GB]
+Number of Threads =     8
+Performance:  0.10769E+04 [GB/s]  0.26131E+03 [GFLOPS] 0.80536E-02 [sec]/itr  0.15302E+00 [sec]
+Array size =    82^3
+Block =    10
+Grid points =  5513680
+Memory size =       1.11945853 [GB]
+Memory size / block =       0.11194585 [GB]
+Number of Threads =     8
+Performance:  0.10641E+04 [GB/s]  0.25821E+03 [GFLOPS] 0.84561E-02 [sec]/itr  0.16067E+00 [sec]
+Array size =    83^3
+Block =    10
+Grid points =  5717870
+Memory size =       1.15896525 [GB]
+Memory size / block =       0.11589652 [GB]
+Number of Threads =     8
+Performance:  0.10851E+04 [GB/s]  0.26329E+03 [GFLOPS] 0.85998E-02 [sec]/itr  0.16340E+00 [sec]
+Array size =    84^3
+Block =     9
+Grid points =  5334336
+Memory size =       1.07945162 [GB]
+Memory size / block =       0.11993907 [GB]
+Number of Threads =     8
+Performance:  0.10856E+04 [GB/s]  0.26342E+03 [GFLOPS] 0.80191E-02 [sec]/itr  0.15236E+00 [sec]
+Array size =    85^3
+Block =     9
+Grid points =  5527125
+Memory size =       1.11667086 [GB]
+Memory size / block =       0.12407454 [GB]
+Number of Threads =     8
+Performance:  0.10812E+04 [GB/s]  0.26234E+03 [GFLOPS] 0.83432E-02 [sec]/itr  0.15852E+00 [sec]
+Array size =    86^3
+Block =     9
+Grid points =  5724504
+Memory size =       1.15473597 [GB]
+Memory size / block =       0.12830400 [GB]
+Number of Threads =     8
+Performance:  0.10115E+04 [GB/s]  0.24543E+03 [GFLOPS] 0.92364E-02 [sec]/itr  0.17549E+00 [sec]
+Array size =    87^3
+Block =     8
+Grid points =  5268024
+Memory size =       1.06102794 [GB]
+Memory size / block =       0.13262849 [GB]
+Number of Threads =     8
+Performance:  0.79832E+03 [GB/s]  0.19371E+03 [GFLOPS] 0.10769E-01 [sec]/itr  0.20462E+00 [sec]
+Array size =    88^3
+Block =     8
+Grid points =  5451776
+Memory size =       1.09639267 [GB]
+Memory size / block =       0.13704908 [GB]
+Number of Threads =     8
+Performance:  0.11030E+04 [GB/s]  0.26763E+03 [GFLOPS] 0.80668E-02 [sec]/itr  0.15327E+00 [sec]
+Array size =    89^3
+Block =     8
+Grid points =  5639752
+Memory size =       1.13253462 [GB]
+Memory size / block =       0.14156683 [GB]
+Number of Threads =     8
+Performance:  0.10830E+04 [GB/s]  0.26278E+03 [GFLOPS] 0.84989E-02 [sec]/itr  0.16148E+00 [sec]
+Array size =    90^3
+Block =     8
+Grid points =  5832000
+Memory size =       1.16946224 [GB]
+Memory size / block =       0.14618278 [GB]
+Number of Threads =     8
+Performance:  0.11045E+04 [GB/s]  0.26802E+03 [GFLOPS] 0.86169E-02 [sec]/itr  0.16372E+00 [sec]
+Array size =    91^3
+Block =     7
+Grid points =  5274997
+Memory size =       1.05628597 [GB]
+Memory size / block =       0.15089800 [GB]
+Number of Threads =     8
+Performance:  0.11088E+04 [GB/s]  0.26905E+03 [GFLOPS] 0.77641E-02 [sec]/itr  0.14752E+00 [sec]
+Array size =    92^3
+Block =     7
+Grid points =  5450816
+Memory size =       1.08999472 [GB]
+Memory size / block =       0.15571353 [GB]
+Number of Threads =     8
+Performance:  0.98327E+03 [GB/s]  0.23859E+03 [GFLOPS] 0.90471E-02 [sec]/itr  0.17189E+00 [sec]
+Array size =    93^3
+Block =     7
+Grid points =  5630499
+Memory size =       1.12441310 [GB]
+Memory size / block =       0.16063044 [GB]
+Number of Threads =     8
+Performance:  0.11102E+04 [GB/s]  0.26940E+03 [GFLOPS] 0.82765E-02 [sec]/itr  0.15725E+00 [sec]
+Array size =    94^3
+Block =     7
+Grid points =  5814088
+Memory size =       1.15954851 [GB]
+Memory size / block =       0.16564979 [GB]
+Number of Threads =     8
+Performance:  0.10894E+04 [GB/s]  0.26433E+03 [GFLOPS] 0.87101E-02 [sec]/itr  0.16549E+00 [sec]
+Array size =    95^3
+Block =     6
+Grid points =  5144250
+Memory size =       1.02463572 [GB]
+Memory size / block =       0.17077262 [GB]
+Number of Threads =     8
+Performance:  0.11014E+04 [GB/s]  0.26724E+03 [GFLOPS] 0.76228E-02 [sec]/itr  0.14483E+00 [sec]
+Array size =    96^3
+Block =     6
+Grid points =  5308416
+Memory size =       1.05599997 [GB]
+Memory size / block =       0.17600000 [GB]
+Number of Threads =     8
+Performance:  0.10946E+04 [GB/s]  0.26560E+03 [GFLOPS] 0.79146E-02 [sec]/itr  0.15038E+00 [sec]
+Array size =    97^3
+Block =     6
+Grid points =  5476038
+Memory size =       1.08799783 [GB]
+Memory size / block =       0.18133297 [GB]
+Number of Threads =     8
+Performance:  0.99801E+03 [GB/s]  0.24216E+03 [GFLOPS] 0.89547E-02 [sec]/itr  0.17014E+00 [sec]
+Array size =    98^3
+Block =     6
+Grid points =  5647152
+Memory size =       1.12063562 [GB]
+Memory size / block =       0.18677260 [GB]
+Number of Threads =     8
+Performance:  0.10765E+04 [GB/s]  0.26122E+03 [GFLOPS] 0.85608E-02 [sec]/itr  0.16266E+00 [sec]
+Array size =    99^3
+Block =     6
+Grid points =  5821794
+Memory size =       1.15391968 [GB]
+Memory size / block =       0.19231995 [GB]
+Number of Threads =     8
+Performance:  0.10656E+04 [GB/s]  0.25857E+03 [GFLOPS] 0.89160E-02 [sec]/itr  0.16940E+00 [sec]
+Array size =   100^3
+Block =     5
+Grid points =  5000000
+Memory size =       0.98988029 [GB]
+Memory size / block =       0.19797606 [GB]
+Number of Threads =     8
+Performance:  0.10379E+04 [GB/s]  0.25184E+03 [GFLOPS] 0.78621E-02 [sec]/itr  0.14938E+00 [sec]
+Array size =   101^3
+Block =     5
+Grid points =  5151505
+Memory size =       1.01870997 [GB]
+Memory size / block =       0.20374199 [GB]
+Number of Threads =     8
+Performance:  0.10730E+04 [GB/s]  0.26035E+03 [GFLOPS] 0.78354E-02 [sec]/itr  0.14887E+00 [sec]
+Array size =   102^3
+Block =     5
+Grid points =  5306040
+Memory size =       1.04809405 [GB]
+Memory size / block =       0.20961881 [GB]
+Number of Threads =     8
+Performance:  0.10863E+04 [GB/s]  0.26358E+03 [GFLOPS] 0.79718E-02 [sec]/itr  0.15146E+00 [sec]
+Array size =   103^3
+Block =     5
+Grid points =  5463635
+Memory size =       1.07803781 [GB]
+Memory size / block =       0.21560756 [GB]
+Number of Threads =     8
+Performance:  0.10057E+04 [GB/s]  0.24402E+03 [GFLOPS] 0.88665E-02 [sec]/itr  0.16846E+00 [sec]
+Array size =   104^3
+Block =     5
+Grid points =  5624320
+Memory size =       1.10854653 [GB]
+Memory size / block =       0.22170931 [GB]
+Number of Threads =     8
+Performance:  0.10350E+04 [GB/s]  0.25115E+03 [GFLOPS] 0.88682E-02 [sec]/itr  0.16850E+00 [sec]
+Array size =   105^3
+Block =     5
+Grid points =  5788125
+Memory size =       1.13962549 [GB]
+Memory size / block =       0.22792510 [GB]
+Number of Threads =     8
+Performance:  0.10061E+04 [GB/s]  0.24413E+03 [GFLOPS] 0.93889E-02 [sec]/itr  0.17839E+00 [sec]
+Array size =   106^3
+Block =     4
+Grid points =  4764064
+Memory size =       0.93702397 [GB]
+Memory size / block =       0.23425599 [GB]
+Number of Threads =     8
+Performance:  0.10315E+04 [GB/s]  0.25029E+03 [GFLOPS] 0.75376E-02 [sec]/itr  0.14321E+00 [sec]
+Array size =   107^3
+Block =     4
+Grid points =  4900172
+Memory size =       0.96281220 [GB]
+Memory size / block =       0.24070305 [GB]
+Number of Threads =     8
+Performance:  0.96851E+03 [GB/s]  0.23501E+03 [GFLOPS] 0.82571E-02 [sec]/itr  0.15688E+00 [sec]
+Array size =   108^3
+Block =     4
+Grid points =  5038848
+Memory size =       0.98906928 [GB]
+Memory size / block =       0.24726732 [GB]
+Number of Threads =     8
+Performance:  0.10593E+04 [GB/s]  0.25705E+03 [GFLOPS] 0.77627E-02 [sec]/itr  0.14749E+00 [sec]
+Array size =   109^3
+Block =     4
+Grid points =  5180116
+Memory size =       1.01579946 [GB]
+Memory size / block =       0.25394986 [GB]
+Number of Threads =     8
+Performance:  0.10961E+04 [GB/s]  0.26597E+03 [GFLOPS] 0.77125E-02 [sec]/itr  0.14654E+00 [sec]
+Array size =   110^3
+Block =     4
+Grid points =  5324000
+Memory size =       1.04300695 [GB]
+Memory size / block =       0.26075174 [GB]
+Number of Threads =     8
+Performance:  0.11175E+04 [GB/s]  0.27117E+03 [GFLOPS] 0.77749E-02 [sec]/itr  0.14772E+00 [sec]
+Array size =   111^3
+Block =     4
+Grid points =  5470524
+Memory size =       1.07069597 [GB]
+Memory size / block =       0.26767399 [GB]
+Number of Threads =     8
+Performance:  0.11074E+04 [GB/s]  0.26871E+03 [GFLOPS] 0.80620E-02 [sec]/itr  0.15318E+00 [sec]
+Array size =   112^3
+Block =     4
+Grid points =  5619712
+Memory size =       1.09887075 [GB]
+Memory size / block =       0.27471769 [GB]
+Number of Threads =     8
+Performance:  0.11087E+04 [GB/s]  0.26902E+03 [GFLOPS] 0.82723E-02 [sec]/itr  0.15717E+00 [sec]
+Array size =   113^3
+Block =     4
+Grid points =  5771588
+Memory size =       1.12753552 [GB]
+Memory size / block =       0.28188388 [GB]
+Number of Threads =     8
+Performance:  0.11221E+04 [GB/s]  0.27227E+03 [GFLOPS] 0.83944E-02 [sec]/itr  0.15949E+00 [sec]
+Array size =   114^3
+Block =     3
+Grid points =  4444632
+Memory size =       0.86752087 [GB]
+Memory size / block =       0.28917362 [GB]
+Number of Threads =     8
+Performance:  0.11102E+04 [GB/s]  0.26938E+03 [GFLOPS] 0.65338E-02 [sec]/itr  0.12414E+00 [sec]
+Array size =   115^3
+Block =     3
+Grid points =  4562625
+Memory size =       0.88976393 [GB]
+Memory size / block =       0.29658798 [GB]
+Number of Threads =     8
+Performance:  0.11104E+04 [GB/s]  0.26943E+03 [GFLOPS] 0.67061E-02 [sec]/itr  0.12742E+00 [sec]
+Array size =   116^3
+Block =     3
+Grid points =  4682688
+Memory size =       0.91238397 [GB]
+Memory size / block =       0.30412799 [GB]
+Number of Threads =     8
+Performance:  0.10823E+04 [GB/s]  0.26262E+03 [GFLOPS] 0.70609E-02 [sec]/itr  0.13416E+00 [sec]
+Array size =   117^3
+Block =     3
+Grid points =  4804839
+Memory size =       0.93538418 [GB]
+Memory size / block =       0.31179473 [GB]
+Number of Threads =     8
+Performance:  0.11356E+04 [GB/s]  0.27556E+03 [GFLOPS] 0.69050E-02 [sec]/itr  0.13120E+00 [sec]
+Array size =   118^3
+Block =     3
+Grid points =  4929096
+Memory size =       0.95876772 [GB]
+Memory size / block =       0.31958924 [GB]
+Number of Threads =     8
+Performance:  0.11277E+04 [GB/s]  0.27363E+03 [GFLOPS] 0.71336E-02 [sec]/itr  0.13554E+00 [sec]
+Array size =   119^3
+Block =     3
+Grid points =  5055477
+Memory size =       0.98253775 [GB]
+Memory size / block =       0.32751258 [GB]
+Number of Threads =     8
+Performance:  0.11175E+04 [GB/s]  0.27116E+03 [GFLOPS] 0.73831E-02 [sec]/itr  0.14028E+00 [sec]
+Array size =   120^3
+Block =     3
+Grid points =  5184000
+Memory size =       1.00669744 [GB]
+Memory size / block =       0.33556581 [GB]
+Number of Threads =     8
+Performance:  0.11181E+04 [GB/s]  0.27130E+03 [GFLOPS] 0.75666E-02 [sec]/itr  0.14377E+00 [sec]
+Array size =   121^3
+Block =     3
+Grid points =  5314683
+Memory size =       1.03124997 [GB]
+Memory size / block =       0.34374999 [GB]
+Number of Threads =     8
+Performance:  0.11081E+04 [GB/s]  0.26887E+03 [GFLOPS] 0.78277E-02 [sec]/itr  0.14873E+00 [sec]
+Array size =   122^3
+Block =     3
+Grid points =  5447544
+Memory size =       1.05619850 [GB]
+Memory size / block =       0.35206617 [GB]
+Number of Threads =     8
+Performance:  0.11109E+04 [GB/s]  0.26955E+03 [GFLOPS] 0.80031E-02 [sec]/itr  0.15206E+00 [sec]
+Array size =   123^3
+Block =     3
+Grid points =  5582601
+Memory size =       1.08154619 [GB]
+Memory size / block =       0.36051540 [GB]
+Number of Threads =     8
+Performance:  0.10941E+04 [GB/s]  0.26548E+03 [GFLOPS] 0.83273E-02 [sec]/itr  0.15822E+00 [sec]
+Array size =   124^3
+Block =     3
+Grid points =  5719872
+Memory size =       1.10729622 [GB]
+Memory size / block =       0.36909874 [GB]
+Number of Threads =     8
+Performance:  0.10823E+04 [GB/s]  0.26261E+03 [GFLOPS] 0.86251E-02 [sec]/itr  0.16388E+00 [sec]
+Array size =   125^3
+Block =     2
+Grid points =  3906250
+Memory size =       0.75563451 [GB]
+Memory size / block =       0.37781725 [GB]
+Number of Threads =     8
+Performance:  0.11387E+04 [GB/s]  0.27630E+03 [GFLOPS] 0.55986E-02 [sec]/itr  0.10637E+00 [sec]
+Array size =   126^3
+Block =     2
+Grid points =  4000752
+Memory size =       0.77334398 [GB]
+Memory size / block =       0.38667199 [GB]
+Number of Threads =     8
+Performance:  0.11214E+04 [GB/s]  0.27210E+03 [GFLOPS] 0.58226E-02 [sec]/itr  0.11063E+00 [sec]
+Array size =   127^3
+Block =     2
+Grid points =  4096766
+Memory size =       0.79132801 [GB]
+Memory size / block =       0.39566400 [GB]
+Number of Threads =     8
+Performance:  0.89968E+03 [GB/s]  0.21830E+03 [GFLOPS] 0.74315E-02 [sec]/itr  0.14120E+00 [sec]
+Array size =   128^3
+Block =     2
+Grid points =  4194304
+Memory size =       0.80958871 [GB]
+Memory size / block =       0.40479436 [GB]
+Number of Threads =     8
+Performance:  0.10447E+04 [GB/s]  0.25349E+03 [GFLOPS] 0.65523E-02 [sec]/itr  0.12449E+00 [sec]
+Array size =   129^3
+Block =     2
+Grid points =  4293378
+Memory size =       0.82812820 [GB]
+Memory size / block =       0.41406410 [GB]
+Number of Threads =     8
+Performance:  0.99942E+03 [GB/s]  0.24251E+03 [GFLOPS] 0.70109E-02 [sec]/itr  0.13321E+00 [sec]
+Array size =   130^3
+Block =     2
+Grid points =  4394000
+Memory size =       0.84694858 [GB]
+Memory size / block =       0.42347429 [GB]
+Number of Threads =     8
+Performance:  0.10743E+04 [GB/s]  0.26067E+03 [GFLOPS] 0.66751E-02 [sec]/itr  0.12683E+00 [sec]
+Array size =   131^3
+Block =     2
+Grid points =  4496182
+Memory size =       0.86605198 [GB]
+Memory size / block =       0.43302599 [GB]
+Number of Threads =     8
+Performance:  0.11125E+04 [GB/s]  0.26995E+03 [GFLOPS] 0.65957E-02 [sec]/itr  0.12532E+00 [sec]
+Array size =   132^3
+Block =     2
+Grid points =  4599936
+Memory size =       0.88544049 [GB]
+Memory size / block =       0.44272024 [GB]
+Number of Threads =     8
+Performance:  0.11335E+04 [GB/s]  0.27505E+03 [GFLOPS] 0.66227E-02 [sec]/itr  0.12583E+00 [sec]
+Array size =   133^3
+Block =     2
+Grid points =  4705274
+Memory size =       0.90511623 [GB]
+Memory size / block =       0.45255812 [GB]
+Number of Threads =     8
+Performance:  0.96111E+03 [GB/s]  0.23321E+03 [GFLOPS] 0.79897E-02 [sec]/itr  0.15180E+00 [sec]
+Array size =   134^3
+Block =     2
+Grid points =  4812208
+Memory size =       0.92508132 [GB]
+Memory size / block =       0.46254066 [GB]
+Number of Threads =     8
+Performance:  0.11079E+04 [GB/s]  0.26882E+03 [GFLOPS] 0.70888E-02 [sec]/itr  0.13469E+00 [sec]
+Array size =   135^3
+Block =     2
+Grid points =  4920750
+Memory size =       0.94533786 [GB]
+Memory size / block =       0.47266893 [GB]
+Number of Threads =     8
+Performance:  0.11638E+04 [GB/s]  0.28239E+03 [GFLOPS] 0.69005E-02 [sec]/itr  0.13111E+00 [sec]
+Array size =   136^3
+Block =     2
+Grid points =  5030912
+Memory size =       0.96588797 [GB]
+Memory size / block =       0.48294399 [GB]
+Number of Threads =     8
+Performance:  0.11529E+04 [GB/s]  0.27975E+03 [GFLOPS] 0.71214E-02 [sec]/itr  0.13531E+00 [sec]
+Array size =   137^3
+Block =     2
+Grid points =  5142706
+Memory size =       0.98673376 [GB]
+Memory size / block =       0.49336688 [GB]
+Number of Threads =     8
+Performance:  0.11459E+04 [GB/s]  0.27804E+03 [GFLOPS] 0.73245E-02 [sec]/itr  0.13917E+00 [sec]
+Array size =   138^3
+Block =     2
+Grid points =  5256144
+Memory size =       1.00787735 [GB]
+Memory size / block =       0.50393867 [GB]
+Number of Threads =     8
+Performance:  0.11581E+04 [GB/s]  0.28101E+03 [GFLOPS] 0.74070E-02 [sec]/itr  0.14073E+00 [sec]
+Array size =   139^3
+Block =     2
+Grid points =  5371238
+Memory size =       1.02932083 [GB]
+Memory size / block =       0.51466042 [GB]
+Number of Threads =     8
+Performance:  0.11184E+04 [GB/s]  0.27139E+03 [GFLOPS] 0.78376E-02 [sec]/itr  0.14891E+00 [sec]
+Array size =   140^3
+Block =     2
+Grid points =  5488000
+Memory size =       1.05106634 [GB]
+Memory size / block =       0.52553317 [GB]
+Number of Threads =     8
+Performance:  0.11109E+04 [GB/s]  0.26956E+03 [GFLOPS] 0.80623E-02 [sec]/itr  0.15318E+00 [sec]
+Array size =   141^3
+Block =     2
+Grid points =  5606442
+Memory size =       1.07311597 [GB]
+Memory size / block =       0.53655798 [GB]
+Number of Threads =     8
+Performance:  0.10093E+04 [GB/s]  0.24491E+03 [GFLOPS] 0.90653E-02 [sec]/itr  0.17224E+00 [sec]
+Array size =   142^3
+Block =     2
+Grid points =  5726576
+Memory size =       1.09547184 [GB]
+Memory size / block =       0.54773592 [GB]
+Number of Threads =     8
+Performance:  0.99712E+03 [GB/s]  0.24195E+03 [GFLOPS] 0.93728E-02 [sec]/itr  0.17808E+00 [sec]
+Array size =   143^3
+Block =     1
+Grid points =  2924207
+Memory size =       0.55906803 [GB]
+Memory size / block =       0.55906803 [GB]
+Number of Threads =     8
+Performance:  0.11032E+04 [GB/s]  0.26770E+03 [GFLOPS] 0.43257E-02 [sec]/itr  0.82189E-01 [sec]
+Array size =   144^3
+Block =     1
+Grid points =  2985984
+Memory size =       0.57055538 [GB]
+Memory size / block =       0.57055538 [GB]
+Number of Threads =     8
+Performance:  0.11340E+04 [GB/s]  0.27517E+03 [GFLOPS] 0.42972E-02 [sec]/itr  0.81647E-01 [sec]
+Array size =   145^3
+Block =     1
+Grid points =  3048625
+Memory size =       0.58219901 [GB]
+Memory size / block =       0.58219901 [GB]
+Number of Threads =     8
+Performance:  0.11545E+04 [GB/s]  0.28014E+03 [GFLOPS] 0.43095E-02 [sec]/itr  0.81880E-01 [sec]
+Array size =   146^3
+Block =     1
+Grid points =  3112136
+Memory size =       0.59399998 [GB]
+Memory size / block =       0.59399998 [GB]
+Number of Threads =     8
+Performance:  0.11440E+04 [GB/s]  0.27758E+03 [GFLOPS] 0.44398E-02 [sec]/itr  0.84356E-01 [sec]
+Array size =   147^3
+Block =     1
+Grid points =  3176523
+Memory size =       0.60595936 [GB]
+Memory size / block =       0.60595936 [GB]
+Number of Threads =     8
+Performance:  0.11526E+04 [GB/s]  0.27969E+03 [GFLOPS] 0.44975E-02 [sec]/itr  0.85453E-01 [sec]
+Array size =   148^3
+Block =     1
+Grid points =  3241792
+Memory size =       0.61807819 [GB]
+Memory size / block =       0.61807819 [GB]
+Number of Threads =     8
+Performance:  0.11043E+04 [GB/s]  0.26795E+03 [GFLOPS] 0.47910E-02 [sec]/itr  0.91028E-01 [sec]
+Array size =   149^3
+Block =     1
+Grid points =  3307949
+Memory size =       0.63035753 [GB]
+Memory size / block =       0.63035753 [GB]
+Number of Threads =     8
+Performance:  0.11596E+04 [GB/s]  0.28137E+03 [GFLOPS] 0.46555E-02 [sec]/itr  0.88455E-01 [sec]
+Array size =   150^3
+Block =     1
+Grid points =  3375000
+Memory size =       0.64279845 [GB]
+Memory size / block =       0.64279845 [GB]
+Number of Threads =     8
+Performance:  0.11786E+04 [GB/s]  0.28597E+03 [GFLOPS] 0.46735E-02 [sec]/itr  0.88797E-01 [sec]
+Array size =   151^3
+Block =     1
+Grid points =  3442951
+Memory size =       0.65540198 [GB]
+Memory size / block =       0.65540198 [GB]
+Number of Threads =     8
+Performance:  0.11443E+04 [GB/s]  0.27765E+03 [GFLOPS] 0.49105E-02 [sec]/itr  0.93299E-01 [sec]
+Array size =   152^3
+Block =     1
+Grid points =  3511808
+Memory size =       0.66816920 [GB]
+Memory size / block =       0.66816920 [GB]
+Number of Threads =     8
+Performance:  0.76322E+03 [GB/s]  0.18519E+03 [GFLOPS] 0.75093E-02 [sec]/itr  0.14268E+00 [sec]
+Array size =   153^3
+Block =     1
+Grid points =  3581577
+Memory size =       0.68110115 [GB]
+Memory size / block =       0.68110115 [GB]
+Number of Threads =     8
+Performance:  0.46436E+03 [GB/s]  0.11268E+03 [GFLOPS] 0.12588E-01 [sec]/itr  0.23916E+00 [sec]
+Array size =   154^3
+Block =     1
+Grid points =  3652264
+Memory size =       0.69419889 [GB]
+Memory size / block =       0.69419889 [GB]
+Number of Threads =     8
+Performance:  0.99887E+03 [GB/s]  0.24237E+03 [GFLOPS] 0.59672E-02 [sec]/itr  0.11338E+00 [sec]
+Array size =   155^3
+Block =     1
+Grid points =  3723875
+Memory size =       0.70746348 [GB]
+Memory size / block =       0.70746348 [GB]
+Number of Threads =     8
+Performance:  0.10331E+04 [GB/s]  0.25069E+03 [GFLOPS] 0.58824E-02 [sec]/itr  0.11177E+00 [sec]
+Array size =   156^3
+Block =     1
+Grid points =  3796416
+Memory size =       0.72089598 [GB]
+Memory size / block =       0.72089598 [GB]
+Number of Threads =     8
+Performance:  0.11048E+04 [GB/s]  0.26807E+03 [GFLOPS] 0.56082E-02 [sec]/itr  0.10656E+00 [sec]
+Array size =   157^3
+Block =     1
+Grid points =  3869893
+Memory size =       0.73449744 [GB]
+Memory size / block =       0.73449744 [GB]
+Number of Threads =     8
+Performance:  0.10800E+04 [GB/s]  0.26206E+03 [GFLOPS] 0.58478E-02 [sec]/itr  0.11111E+00 [sec]
+Array size =   158^3
+Block =     1
+Grid points =  3944312
+Memory size =       0.74826891 [GB]
+Memory size / block =       0.74826891 [GB]
+Number of Threads =     8
+Performance:  0.92452E+03 [GB/s]  0.22433E+03 [GFLOPS] 0.69627E-02 [sec]/itr  0.13229E+00 [sec]
+Array size =   159^3
+Block =     1
+Grid points =  4019679
+Memory size =       0.76221145 [GB]
+Memory size / block =       0.76221145 [GB]
+Number of Threads =     8
+Performance:  0.66947E+03 [GB/s]  0.16245E+03 [GFLOPS] 0.97990E-02 [sec]/itr  0.18618E+00 [sec]
+Array size =   160^3
+Block =     1
+Grid points =  4096000
+Memory size =       0.77632612 [GB]
+Memory size / block =       0.77632612 [GB]
+Number of Threads =     8
+Performance:  0.11621E+04 [GB/s]  0.28199E+03 [GFLOPS] 0.57521E-02 [sec]/itr  0.10929E+00 [sec]
+Array size =   161^3
+Block =     1
+Grid points =  4173281
+Memory size =       0.79061398 [GB]
+Memory size / block =       0.79061398 [GB]
+Number of Threads =     8
+Performance:  0.11708E+04 [GB/s]  0.28409E+03 [GFLOPS] 0.58172E-02 [sec]/itr  0.11053E+00 [sec]
+Array size =   162^3
+Block =     1
+Grid points =  4251528
+Memory size =       0.80507607 [GB]
+Memory size / block =       0.80507607 [GB]
+Number of Threads =     8
+Performance:  0.10576E+04 [GB/s]  0.25662E+03 [GFLOPS] 0.65607E-02 [sec]/itr  0.12465E+00 [sec]
+Array size =   163^3
+Block =     1
+Grid points =  4330747
+Memory size =       0.81971346 [GB]
+Memory size / block =       0.81971346 [GB]
+Number of Threads =     8
+Performance:  0.11544E+04 [GB/s]  0.28010E+03 [GFLOPS] 0.61226E-02 [sec]/itr  0.11633E+00 [sec]
+Array size =   164^3
+Block =     1
+Grid points =  4410944
+Memory size =       0.83452721 [GB]
+Memory size / block =       0.83452721 [GB]
+Number of Threads =     8
+Performance:  0.11591E+04 [GB/s]  0.28126E+03 [GFLOPS] 0.62103E-02 [sec]/itr  0.11800E+00 [sec]
+Array size =   165^3
+Block =     1
+Grid points =  4492125
+Memory size =       0.84951836 [GB]
+Memory size / block =       0.84951836 [GB]
+Number of Threads =     8
+Performance:  0.11412E+04 [GB/s]  0.27690E+03 [GFLOPS] 0.64242E-02 [sec]/itr  0.12206E+00 [sec]
+Array size =   166^3
+Block =     1
+Grid points =  4574296
+Memory size =       0.86468798 [GB]
+Memory size / block =       0.86468798 [GB]
+Number of Threads =     8
+Performance:  0.11860E+04 [GB/s]  0.28779E+03 [GFLOPS] 0.62943E-02 [sec]/itr  0.11959E+00 [sec]
+Array size =   167^3
+Block =     1
+Grid points =  4657463
+Memory size =       0.88003711 [GB]
+Memory size / block =       0.88003711 [GB]
+Number of Threads =     8
+Performance:  0.93790E+03 [GB/s]  0.22758E+03 [GFLOPS] 0.81042E-02 [sec]/itr  0.15398E+00 [sec]
+Array size =   168^3
+Block =     1
+Grid points =  4741632
+Memory size =       0.89556682 [GB]
+Memory size / block =       0.89556682 [GB]
+Number of Threads =     8
+Performance:  0.10415E+04 [GB/s]  0.25273E+03 [GFLOPS] 0.74298E-02 [sec]/itr  0.14117E+00 [sec]
+Array size =   169^3
+Block =     1
+Grid points =  4826809
+Memory size =       0.91127817 [GB]
+Memory size / block =       0.91127817 [GB]
+Number of Threads =     8
+Performance:  0.11646E+04 [GB/s]  0.28258E+03 [GFLOPS] 0.67641E-02 [sec]/itr  0.12852E+00 [sec]
+Array size =   170^3
+Block =     1
+Grid points =  4913000
+Memory size =       0.92717220 [GB]
+Memory size / block =       0.92717220 [GB]
+Number of Threads =     8
+Performance:  0.11851E+04 [GB/s]  0.28755E+03 [GFLOPS] 0.67659E-02 [sec]/itr  0.12855E+00 [sec]
+Array size =   171^3
+Block =     1
+Grid points =  5000211
+Memory size =       0.94324997 [GB]
+Memory size / block =       0.94324997 [GB]
+Number of Threads =     8
+Performance:  0.11704E+04 [GB/s]  0.28399E+03 [GFLOPS] 0.69723E-02 [sec]/itr  0.13247E+00 [sec]
+Array size =   172^3
+Block =     1
+Grid points =  5088448
+Memory size =       0.95951255 [GB]
+Memory size / block =       0.95951255 [GB]
+Number of Threads =     8
+Performance:  0.11577E+04 [GB/s]  0.28090E+03 [GFLOPS] 0.71734E-02 [sec]/itr  0.13630E+00 [sec]
+Array size =   173^3
+Block =     1
+Grid points =  5177717
+Memory size =       0.97596098 [GB]
+Memory size / block =       0.97596098 [GB]
+Number of Threads =     8
+Performance:  0.10224E+04 [GB/s]  0.24808E+03 [GFLOPS] 0.82649E-02 [sec]/itr  0.15703E+00 [sec]
+Array size =   174^3
+Block =     1
+Grid points =  5268024
+Memory size =       0.99259632 [GB]
+Memory size / block =       0.99259632 [GB]
+Number of Threads =     8
+Performance:  0.11729E+04 [GB/s]  0.28460E+03 [GFLOPS] 0.73301E-02 [sec]/itr  0.13927E+00 [sec]
+Array size =   175^3
+Block =     1
+Grid points =  5359375
+Memory size =       1.00941964 [GB]
+Memory size / block =       1.00941964 [GB]
+Number of Threads =     8
+Performance:  0.11810E+04 [GB/s]  0.28655E+03 [GFLOPS] 0.74063E-02 [sec]/itr  0.14072E+00 [sec]
+Array size =   176^3
+Block =     1
+Grid points =  5451776
+Memory size =       1.02643197 [GB]
+Memory size / block =       1.02643197 [GB]
+Number of Threads =     8
+Performance:  0.97607E+03 [GB/s]  0.23684E+03 [GFLOPS] 0.91154E-02 [sec]/itr  0.17319E+00 [sec]
+Array size =   177^3
+Block =     1
+Grid points =  5545233
+Memory size =       1.04363439 [GB]
+Memory size / block =       1.04363439 [GB]
+Number of Threads =     8
+Performance:  0.11565E+04 [GB/s]  0.28063E+03 [GFLOPS] 0.78250E-02 [sec]/itr  0.14867E+00 [sec]
+Array size =   178^3
+Block =     1
+Grid points =  5639752
+Memory size =       1.06102794 [GB]
+Memory size / block =       1.06102794 [GB]
+Number of Threads =     8
+Performance:  0.10496E+04 [GB/s]  0.25468E+03 [GFLOPS] 0.87691E-02 [sec]/itr  0.16661E+00 [sec]
+Array size =   179^3
+Block =     1
+Grid points =  5735339
+Memory size =       1.07861368 [GB]
+Memory size / block =       1.07861368 [GB]
+Number of Threads =     8
+Performance:  0.11770E+04 [GB/s]  0.28560E+03 [GFLOPS] 0.79524E-02 [sec]/itr  0.15110E+00 [sec]
+Array size =   180^3
+Block =     1
+Grid points =  5832000
+Memory size =       1.09639267 [GB]
+Memory size / block =       1.09639267 [GB]
+Number of Threads =     8
+Performance:  0.11651E+04 [GB/s]  0.28271E+03 [GFLOPS] 0.81691E-02 [sec]/itr  0.15521E+00 [sec]

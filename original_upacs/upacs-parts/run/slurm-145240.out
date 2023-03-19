@@ -1,0 +1,4 @@
+veos-2.7.4-1.el7.x86_64
+./run: 行 29: ../rhs-1d_omp_marge/alc: そのようなファイルやディレクトリはありません
+./run: 行 29: ../rhs-1d_omp_marge/alc: そのようなファイルやディレクトリはありません
+slurmstepd: error: *** JOB 145240 ON aurora4 CANCELLED AT 2021-01-06T18:40:07 DUE TO TIME LIMIT ***

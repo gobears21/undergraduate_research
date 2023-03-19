@@ -1,0 +1,20 @@
+      !
+      ! zeta derivatives
+      !
+      ! *:21, /:8, +:12, -:16
+      dudzet = 0.25*((u(<IJKA>)-u(<IJK>))*dxi &
+             +       (u(<IJKB>)-u(<IJKP>))*dxi &
+             +       (u(<IJK>)-u(<IJKC>))*dxi &
+             +       (u(<IJKP>)-u(<IJKD>))*dxi)
+      dvdzet = 0.25*((v(<IJKA>)-v(<IJK>))*dxi &
+             +       (v(<IJKB>)-v(<IJKP>))*dxi &
+             +       (v(<IJK>)-v(<IJKC>))*dxi &
+             +       (v(<IJKP>)-v(<IJKD>))*dxi)
+      dwdzet = 0.25*((w(<IJKA>)-w(<IJK>))*dxi &
+             +       (w(<IJKB>)-w(<IJKP>))*dxi &
+             +       (w(<IJK>)-w(<IJKC>))*dxi &
+             +       (w(<IJKP>)-w(<IJKD>))*dxi)
+      dTdzet = 0.25*GAMMA*((pre(<IJKA>)/rho(<IJKA>)-pre(<IJK>)/rho(<IJK>))*dxi &
+             +             (pre(<IJKB>)/rho(<IJKB>)-pre(<IJKP>)/rho(<IJKP>))*dxi &
+             +             (pre(<IJK>)/rho(<IJK>)-pre(<IJKC>)/rho(<IJKC>))*dxi &
+             +             (pre(<IJKP>)/rho(<IJKP>)-pre(<IJKD>)/rho(<IJKD>))*dxi)

@@ -1,0 +1,31 @@
+          ! -:5, *:5
+          dq_m(1) = (rho(<IJK>)-rho(<IJKM>))*dxi
+          dq_m(2) = (u  (<IJK>)-u  (<IJKM>))*dxi
+          dq_m(3) = (v  (<IJK>)-v  (<IJKM>))*dxi
+          dq_m(4) = (w  (<IJK>)-w  (<IJKM>))*dxi
+          dq_m(5) = (pre(<IJK>)-pre(<IJKM>))*dxi
+          !
+          ! -:5, *:5
+          dq_p(1) = (rho(<IJKP>)-rho(<IJK>))*dxi
+          dq_p(2) = (u  (<IJKP>)-u  (<IJK>))*dxi
+          dq_p(3) = (v  (<IJKP>)-v  (<IJK>))*dxi
+          dq_p(4) = (w  (<IJKP>)-w  (<IJK>))*dxi
+          dq_p(5) = (pre(<IJKP>)-pre(<IJK>))*dxi
+          !
+          ! sign:20, +:10, *:30, min:10, abs:20
+          dq_p_tilda = (sign(.5d0,dq_p)+sign(.5d0,beta*dq_m))*min(abs(dq_p),abs(beta*dq_m))
+          dq_m_tilda = (sign(.5d0,dq_m)+sign(.5d0,beta*dq_p))*min(abs(dq_m),abs(beta*dq_p))
+          !
+          ! -:5, +:5, *:20
+          rhoR(<LA_IJKM>) = rho(<IJK>)-dx_harf*.5*(KAPPA_1M*dq_p_tilda(1)+KAPPA_1P*dq_m_tilda(1))
+          uR  (<LA_IJKM>) = u  (<IJK>)-dx_harf*.5*(KAPPA_1M*dq_p_tilda(2)+KAPPA_1P*dq_m_tilda(2))
+          vR  (<LA_IJKM>) = v  (<IJK>)-dx_harf*.5*(KAPPA_1M*dq_p_tilda(3)+KAPPA_1P*dq_m_tilda(3))
+          wR  (<LA_IJKM>) = w  (<IJK>)-dx_harf*.5*(KAPPA_1M*dq_p_tilda(4)+KAPPA_1P*dq_m_tilda(4))
+          preR(<LA_IJKM>) = pre(<IJK>)-dx_harf*.5*(KAPPA_1M*dq_p_tilda(5)+KAPPA_1P*dq_m_tilda(5))
+          !
+          ! +:10, *:20
+          rhoL(<LA_IJK>) = rho(<IJK>)+dx_harf*.5*(KAPPA_1P*dq_p_tilda(1)+KAPPA_1M*dq_m_tilda(1))
+          uL  (<LA_IJK>) = u  (<IJK>)+dx_harf*.5*(KAPPA_1P*dq_p_tilda(2)+KAPPA_1M*dq_m_tilda(2))
+          vL  (<LA_IJK>) = v  (<IJK>)+dx_harf*.5*(KAPPA_1P*dq_p_tilda(3)+KAPPA_1M*dq_m_tilda(3))
+          wL  (<LA_IJK>) = w  (<IJK>)+dx_harf*.5*(KAPPA_1P*dq_p_tilda(4)+KAPPA_1M*dq_m_tilda(4))
+          preL(<LA_IJK>) = pre(<IJK>)+dx_harf*.5*(KAPPA_1P*dq_p_tilda(5)+KAPPA_1M*dq_m_tilda(5))

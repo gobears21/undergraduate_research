@@ -1,0 +1,17 @@
+*****************************************************origin*********************************************
+BabelStream
+Version: 3.4
+Implementation: SYCL
+Running kernels 100 times
+Precision: double
+Array size: 268.4 MB (=0.3 GB)
+Total size: 805.3 MB (=0.8 GB)
+Validation failed on sum. Error 3.1857e-08
+Sum was 39.7910370589871 but should be 39.7910370271301
+Function    MBytes/sec  Min (sec)   Max         Average
+Copy        528.698     1.01546     1.04152     1.01908
+Mul         526.927     1.01887     1.05022     1.02321
+Add         572.031     1.40780     1.45817     1.41432
+Triad       573.933     1.40314     1.63757     1.41073
+Dot         378.226     1.41944     1.43890     1.42476
+*****************************************************************modified *********************************************

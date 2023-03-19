@@ -1,0 +1,9 @@
+
+Li6:40 PM
+-DBUILD_VE=ON
+Li6:46 PM
+/opt/cmake-3.9/bin/cmake --version
+Li7:12 PM
+typeid
+
+compile command

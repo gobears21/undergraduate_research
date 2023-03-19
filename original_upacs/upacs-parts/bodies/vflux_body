@@ -1,0 +1,25 @@
+      !
+      ! +:2
+      div_u = dudx(<LA_IJK>)+dvdy(<LA_IJK>)+dwdz(<LA_IJK>)
+      !
+      ! *:6, +:3
+      tau(1,1) = CLAMBDA*div_u + 2.*dudx(<LA_IJK>)
+      tau(2,2) = CLAMBDA*div_u + 2.*dvdy(<LA_IJK>)
+      tau(3,3) = CLAMBDA*div_u + 2.*dwdz(<LA_IJK>)
+      !
+      ! +:3
+      tau(1,2) = dudy(<LA_IJK>)+dvdx(<LA_IJK>)
+      tau(2,3) = dvdz(<LA_IJK>)+dwdy(<LA_IJK>)
+      tau(3,1) = dwdx(<LA_IJK>)+dudz(<LA_IJK>)
+      !
+      tau(2,1) = tau(1,2)
+      tau(3,2) = tau(2,3)
+      tau(1,3) = tau(3,1)
+      !
+      ! *:25, +:11, -:4
+      fmass(<LA_IJK>) = 0.0
+      fmomx(<LA_IJK>) = -area*mu(<LA_IJK>)*(tau(1,1)*nv(1)+tau(1,2)*nv(2)+tau(1,3)*nv(3))
+      fmomy(<LA_IJK>) = -area*mu(<LA_IJK>)*(tau(2,1)*nv(1)+tau(2,2)*nv(2)+tau(2,3)*nv(3))
+      fmomz(<LA_IJK>) = -area*mu(<LA_IJK>)*(tau(3,1)*nv(1)+tau(3,2)*nv(2)+tau(3,3)*nv(3))
+      fene (<LA_IJK>) = -area*(fmomx(<LA_IJK>)*fu(<LA_IJK>)+fmomy(<LA_IJK>)*fv(<LA_IJK>)+fmomz(<LA_IJK>)*fw(<LA_IJK>) &
+                      + mu(<LA_IJK>)*PRANDTLI*GAMMA1I*(dTdx(<LA_IJK>)*nv(1)+dTdy(<LA_IJK>)*nv(2)+dTdz(<LA_IJK>)*nv(3)))

@@ -1,0 +1,5 @@
+#!/bin/bash
+#SBATCH --partition aurora
+#SBATCH --gres=ve:1
+
+./run

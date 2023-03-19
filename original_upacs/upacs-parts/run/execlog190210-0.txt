@@ -1,0 +1,116 @@
+            ********  Program  Information  ********
+  Real Time (sec)                         :            26.210009
+  User Time (sec)                         :           207.124985
+  Vector Time (sec)                       :           122.295526
+  Inst. Count                             :         125816387061
+  V. Inst. Count                          :          51112420178
+  V. Element Count                        :       12696956931330
+  V. Load Element Count                   :         631679449944
+  FLOP Count                              :       14339648022519
+  MOPS                                    :         82536.919790
+  MOPS (Real)                             :        653589.216536
+  MFLOPS                                  :         69091.253234
+  MFLOPS (Real)                           :        547116.347271
+  A. V. Length                            :           248.412360
+  V. Op. Ratio (%)                        :            99.563906
+  L1 Cache Miss (sec)                     :            24.186168
+  CPU Port Conf. (sec)                    :             0.000036
+  V. Arith. Exec. (sec)                   :            93.448261
+  V. Load Exec. (sec)                     :            27.140348
+  VLD LLC Hit Element Ratio (%)           :            23.793978
+  Power Throttling (sec)                  :             0.000000
+  Thermal Throttling (sec)                :             0.000000
+  Max Active Threads                      :                    8
+  Available CPU Cores                     :                    8
+  Average CPU Cores Used                  :             7.902515
+  Memory Size Used (MB)                   :          5836.000000
+
+  Start Time (date)        :        Sun Feb 10 15:33:01 2019 JST
+  End   Time (date)        :        Sun Feb 10 15:33:28 2019 JST
+            ********  Program  Information  ********
+  Real Time (sec)                         :            22.639115
+  User Time (sec)                         :           178.234179
+  Vector Time (sec)                       :            80.702300
+  Inst. Count                             :          77411831968
+  V. Inst. Count                          :          17076974438
+  V. Element Count                        :        4242256675146
+  V. Load Element Count                   :        1010687119824
+  FLOP Count                              :        3284733215309
+  MOPS                                    :         30434.936570
+  MOPS (Real)                             :        240280.484315
+  MFLOPS                                  :         18378.259393
+  MFLOPS (Real)                           :        145094.341094
+  A. V. Length                            :           248.419689
+  V. Op. Ratio (%)                        :            98.890825
+  L1 Cache Miss (sec)                     :            26.420305
+  CPU Port Conf. (sec)                    :             0.000046
+  V. Arith. Exec. (sec)                   :            32.624927
+  V. Load Exec. (sec)                     :            47.284545
+  VLD LLC Hit Element Ratio (%)           :            19.918465
+  Power Throttling (sec)                  :             0.000000
+  Thermal Throttling (sec)                :             0.000000
+  Max Active Threads                      :                    8
+  Available CPU Cores                     :                    8
+  Average CPU Cores Used                  :             7.872842
+  Memory Size Used (MB)                   :          6860.000000
+
+  Start Time (date)        :        Sun Feb 10 15:33:28 2019 JST
+  End   Time (date)        :        Sun Feb 10 15:33:51 2019 JST
+            ********  Program  Information  ********
+  Real Time (sec)                         :            30.094481
+  User Time (sec)                         :           238.710810
+  Vector Time (sec)                       :           149.041935
+  Inst. Count                             :         127351278045
+  V. Inst. Count                          :          62560290578
+  V. Element Count                        :       15535599019950
+  V. Load Element Count                   :         947519174844
+  FLOP Count                              :        7580174982086
+  MOPS                                    :         70590.725019
+  MOPS (Real)                             :        560370.877757
+  MFLOPS                                  :         31730.195386
+  MFLOPS (Real)                           :        251884.046168
+  A. V. Length                            :           248.330033
+  V. Op. Ratio (%)                        :            99.615797
+  L1 Cache Miss (sec)                     :            25.859630
+  CPU Port Conf. (sec)                    :             0.000036
+  V. Arith. Exec. (sec)                   :           121.822668
+  V. Load Exec. (sec)                     :            26.560639
+  VLD LLC Hit Element Ratio (%)           :            38.921041
+  Power Throttling (sec)                  :             0.000000
+  Thermal Throttling (sec)                :             0.000000
+  Max Active Threads                      :                    8
+  Available CPU Cores                     :                    8
+  Average CPU Cores Used                  :             7.932046
+  Memory Size Used (MB)                   :          5836.000000
+
+  Start Time (date)        :        Sun Feb 10 15:33:52 2019 JST
+  End   Time (date)        :        Sun Feb 10 15:34:22 2019 JST
+            ********  Program  Information  ********
+  Real Time (sec)                         :            45.449228
+  User Time (sec)                         :           360.606637
+  Vector Time (sec)                       :           241.138086
+  Inst. Count                             :         194818736086
+  V. Inst. Count                          :          72535546598
+  V. Element Count                        :       18016784116266
+  V. Load Element Count                   :        3663740808984
+  FLOP Count                              :       18508211869256
+  MOPS                                    :         68412.312293
+  MOPS (Real)                             :        543660.565411
+  MFLOPS                                  :         51245.031038
+  MFLOPS (Real)                           :        407235.212705
+  A. V. Length                            :           248.385584
+  V. Op. Ratio (%)                        :            99.505097
+  L1 Cache Miss (sec)                     :            37.185116
+  CPU Port Conf. (sec)                    :             0.000046
+  V. Arith. Exec. (sec)                   :           125.750716
+  V. Load Exec. (sec)                     :           112.435479
+  VLD LLC Hit Element Ratio (%)           :            66.849765
+  Power Throttling (sec)                  :             0.000000
+  Thermal Throttling (sec)                :             0.000000
+  Max Active Threads                      :                    8
+  Available CPU Cores                     :                    8
+  Average CPU Cores Used                  :             7.934274
+  Memory Size Used (MB)                   :          6860.000000
+
+  Start Time (date)        :        Sun Feb 10 15:34:23 2019 JST
+  End   Time (date)        :        Sun Feb 10 15:35:08 2019 JST
